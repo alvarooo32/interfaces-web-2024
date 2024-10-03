@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(199, 198, 198);
+}
+h1 {
+    text-align: center; /* Centra horizontalmente */
+    background-color: blue;
+    color: white;
+}
+
+div {
+    padding-left: 30px;
+}
+
+.imagenUsuario {
+    float: left; /*Pone la imagen a la izq permitiendo texto a la derecha*/
+    padding-right: 70px;
+    width: 160px; 
+    height: 170px;
+}
+
+.imagenesCiudades {
+    
+    width: 240px; 
+    height: 150px;
+}
