@@ -142,10 +142,6 @@ html {
 }
 .content__box--redondo{
   border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
   /* padding: 20px; */
   /* overflow: hidden; */
 }
@@ -155,12 +151,11 @@ html {
 .content__box--3d{
   box-shadow: 14px 14px 20px 0 gray;
 }
-.content__box--shadowsMultiple{
-  box-shadow: -1px -1px 6px 0 rgb(122, 221, 102), 4px 4px 16px 2px rgb(92, 162, 235);
+
+.content__box--shadowMultiple{
+  box-shadow: -1px -1px 5px 0 rgb(122,221,);
 }
-.content__box--shadowsMultiple2{
-  box-shadow: 2px 2px 8px 0 rgb(209, 102, 221), 4px 4px 16px 0 #d66, 0px 0px 24px 2px rgb(221, 197, 102);
-}
+
 /* Cajas libres y cajas fijas */
 .box__free{
   position: absolute;
@@ -181,7 +176,8 @@ html {
   top: 0px;
   left: 200px;
 }
-/*Caja fija*/
+
+/* Caja fija*/
 .box__static{
   position: fixed;
   border: 1px solid blue;
@@ -190,10 +186,11 @@ html {
   width: 150px;
   height: 400px;
   top: 0px;
-  left: 1%;
+  left: 5%;
   z-index: 10;
 }
-/*Animaciones*/
+
+/* Animaciones */
 .transformed{
   width: 50px;
   height: 50px;
@@ -208,26 +205,28 @@ html {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 @keyframes rotar{
   0%{
     transform: rotate(0deg);
   }
-  30%{  
+  30%{
     transform: rotate(60deg);
     border-radius: 25px;
     background-color: yellow;
-    color: black;
-  } 
+    color: black
+  }
   70%{
     transform: rotate(270deg);
     border-radius: 100px;
     background-color: red;
-    color: white;
+    color: white
   }
   100%{
     transform: rotate(0deg);
   }
 }
+
 .box__animated{
   width: 150px;
   height: 150px;
@@ -238,44 +237,46 @@ html {
   text-align: center;
   animation: moviendoCaja 20s infinite ease-in-out;
 }
+
 @keyframes moviendoCaja{
   0%{
-    margin-left: 1200px;
-    transform: rotate(60deg);
-}
-  30%{  
+    transform: rotate(0deg);
+  }
+  30%{
     margin-left: 400px;
     transform: rotate(60deg);
     border-radius: 25px;
     background-color: yellow;
-    color: black;
-  } 
+    color: black
+  }
   70%{
     margin-left: 1200px;
     transform: rotate(270deg);
     border-radius: 100px;
     background-color: red;
+    color: white
   }
   100%{
     transform: rotate(0deg);
   }
 }
 
-/*Position Absolute*/
+/* Position Absolute */
 .box__container2{
   position: absolute;
   height: 500px;
   width: 500px;
   border: 1px solid black;
 }
+
 .box__free--3{
-  /* position: relative; */
   background-color: red;
   top: 0px;
   left: 0px;
 }
+
 .box__free--4{
   background-color: green;
   top: 0px;
-  left: 200px;
+  left: 100px;
 }
