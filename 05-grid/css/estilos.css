@@ -16,7 +16,14 @@
 
   }
   .container__layout{
-    
+    display: grid;
+  /*grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: calc(500% - 10px) calc(25% - 10px) calc(25% - 10px);
+
+    grid-template-columns: calc(50% - 10px) calc(25% - 10px) calc(25% - 10px); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
   .layout__box{
     font-size: 20px;
@@ -28,41 +35,57 @@
   .layout__box--red{
     background-color: red;
     color: white;
-
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* order: 1; */
   }
   .layout__box--yellow{
     background-color: yellow;
-    color: white;
+    color: rgb(0, 0, 0);
+    /* order: 3; */
   }
   .layout__box--green{
     background-color: green;
-    color: white;
+    color: rgb(0, 0, 0);
+    /* order: 2; */
   }
   .layout__box--orange{
     background-color: orange;
     color: white;
+    /* order: 4; */
   }
   .layout__box--pink{
     background-color: pink;
     color: white;
+    /* order: 5; */
   }
   .layout__box--blue{
     background-color: blue;
     color: white;
+    /* order: 6; */
   }
   .layout__box--salmon{
     background-color: salmon;
     color: white;
+    /* order: 10; */
   }
   .layout__box--black{
     background-color: black;
     color: white;
+    grid-row: 3/5;
+    /* order: 7; */
   }
    .layout__box--yellowgreen{
-    background-color: yellowgreen;
-    color: white;
+    background-color: palegreen;
+    color: rgb(0, 0, 0);
+    grid-row: 3/5;
+    /* order: 8; */
   }
   .layout__box--cyan{
     background-color:cyan;
-    color: white;
+    color: rgb(0, 0, 0);
+    grid-column-start: 3;  
+    grid-column-end: 5;
+    grid-row: 3/5;
+    /* order: 9; */
   }
