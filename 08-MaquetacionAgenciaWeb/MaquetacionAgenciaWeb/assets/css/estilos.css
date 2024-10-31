@@ -1,14 +1,14 @@
 /* Iniciamos estilos personalizados  */
 /* Definición Variables
  definimos familia de fuente que voy a utilizar */
-:root{
+ :root{
     --mx-width: 1320px;
     --color-text-body:  #525260; /* cambio de black a este color */
     --color-primary: #5956e9;
     --color-secondary: #fff;
     --color-banner: #2522BA;
     --color-text-btn: #0d6efd;
-    --colog-bg-btn: #ffdc60;
+    --color-bg-btn: #ffdc60;
     --color-subtitle: #c75c6f;
     --color-title: #292930;
     --color-bg-services: #f8f8f8;
@@ -54,6 +54,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .menu__navbar{
     /* Flex + aling/justify */
+    display: grid;
+    grid-template-columns: 1fr 0fr 1fr;
 
 }
 
@@ -61,20 +63,30 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     width:187px; /* no utilizo rem para que se mantenga el tamaño */
 }
 .nav__list{
-    /* Flex + aling/justify */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
 .nav__item{
     /* position */
-
+    /* El padre tendra la posición relativa y al hijo le ponemos la absoluta */
+    position: relative;
     margin: 0 2.4rem;
 }
 .nav__title{
-    /* position */
-    
+    /* Ubicamos título e icono */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    position: relative;
     line-height: 6rem;
     font-weight: 500;
     color: var(--color-text-body);
+    /* Efecto */
     transition: all 300ms ease-in-out;
+}
+.nav__title i {
+    margin-left: 5px;
 }
 .nav__icon{
     font-size: 1rem;
@@ -83,52 +95,125 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     vertical-align: middle;
 }
 
-/* efecto */
+/* Efecto */
 .nav__title:hover{
-
+    color: var(--color-primary);
+    transform: scale(1.1);
 }
 
+/* Pseudoelemento para subrayado en el menu */
+/* ::before hace que lo que pongamos se ponga "antes" del elemento en sí */
+.nav__title::before {
+    content:"";
+    position: absolute;
+    height: 0.2rem;
+    background-color: var(--color-primary);
+    bottom: 1.2rem;
+    left: 0;
+    width: 0%;
+    opacity: 0;
+    transition: all 350ms linear;
+
+}
+/* La linea que hemos creado en el ::before, la implementamos al hacer :hover */
+.nav__title:hover::before {
+    width: 100%;
+    opacity: 1;
+}
 
 .nav__submenu{
     /* position */
-    
-    
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 2rem;
+
     min-width: 19rem;
     padding: 1.5rem 1rem;
     background-color: var(--color-secondary);
     box-shadow: 0px 13px 48px 0 rgba(0,0,0,15%);
     
     /* visibility, opacity y efecto */
-
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease-in-out;
 }
 
 .submenu__item{
     /* efecto */ 
+    opacity: 0;
+    /* Traslada en el eje X hacia la derecha (3rem en este caso) */
+    transform: translateX(3rem);
+    transition: all 500ms ease-in-out;
 }
 
 /* efecto */
-
+/* nth-child() Elijo al hijo que quiero tocar */
+.submenu__item:nth-child(1) {
+   transition-delay: 100ms; 
+}
+.submenu__item:nth-child(2) {
+    transition-delay: 200ms;
+}
+.submenu__item:nth-child(3) {
+    transition-delay: 300ms;
+}
+.submenu__item:nth-child(4) {
+    transition-delay: 400ms;
+}
 
 .submenu__title{
     /* position */ 
+    position: relative;
     font-size: 1.4rem;
     text-transform: capitalize;
     text-decoration: none;
     font-weight: 500;
     color: var(--color-text-body);
     padding: 0.7rem 1.5rem;
+    
     /* efecto */
+    transition: all 300ms linear;
+}
+
+/* Efectos varios */
+/* Efecto en la caja escondida en sí */
+.nav__item:hover>.nav__submenu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    /* Para vaya un poco de der a izq */
+    left: 0;
+}
+/* Efecto en los elementos de la caja */
+.nav__item:hover>.nav__submenu>.submenu__item {
+    opacity: 1;
+    /* Vuelve de la posición 3 de antes a la 0 */
+    transform: translateX(0);
+    visibility: visible;
 
 }
 
-/* efectos varios */
-
-
-
+.submenu__title:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+.submenu__item::before {
+    content: "";
+    position: absolute;
+    height: 0.2rem;
+    background-color: var(--color-primary);
+    bottom: 0.5rem;
+    left: 35%;
+    width: 0;
+    opacity: 0;
+    transition: all 300ms linear;
+}
 
 /* Estilos para el Banner */
 .layout__banner{
     /* position */
+    position: relative;
 
     min-height: 60rem;
     /*border: 2px solid red; */
@@ -144,11 +229,12 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .banner__content{
     /* position */
-
+    position: relative;
+    display: inline-block;
 
     width: 50%;
     padding: 0 1.5rem;
-    z-index: 3;
+    z-index: 6;
 }
 .banner__title{
     font-size: 8rem;
@@ -167,50 +253,143 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     text-align: center;
     box-shadow: 0px 45px 70px -25px var(--color-primary);
     /* efecto */
+    transition: all 300ms ease-in-out;
 }
 /* efecto */
-
+.banner__btn:hover {
+    background-color: var(--color-bg-btn);
+}
 
 .shapes__item{
     /* position y z-index */
-    
+    position: absolute;
+    z-index: 5;
     pointer-events: none;
 }
 .shapes__item--shape1{
     /* position y animación */
+    top: 0;
+    right: 0;
+    animation-name: muestraDesdeDerecha;
+    animation-duration: 2s;
+}
+@keyframes muestraDesdeDerecha {
+    from {
+        transform: translateX(70%);
+    }
+    to {
+        transform: translateX(0px);
+    }
 }
 
 .shapes__item--shape2{
     /* position y animación */
+    bottom: 0;
+    left: 0;
+    animation-name: muestraDesdeIzquierda;
+    animation-duration: 2s;
+}
+@keyframes muestraDesdeIzquierda {
+    from {
+        transform: translateX(-70%);
+    }
+    to {
+        transform: translateX(0px);
+    }
 }
 
 .shapes__item--shape3{
     /* position y animación */
+    top: 50%;
+    right: 50%;
+    animation: mueveShape3 20s infinite;
+}
+@keyframes mueveShape3 {
+    0% {
+        transform: translateX(0%) translateY(0%);
+    }
+    33% {
+        transform: translateX(50px) translateY(-200px);
+    }
+    66% {
+        transform: translateX(800px) translateY(0%);
+    }
+    100% {
+        transform: translateX(0%) translateY(0%);
+    }
 }
 
 .shapes__item--shape4{
-    /* position y animación */
+    bottom: 24rem;
+    left: 45%;
+    animation: mueveShape4 20s infinite;
 }
 .shapes__item--shape4 .shapes__img{
     opacity: 0.5;
     width: 7.5rem;
 }
+@keyframes mueveShape4 {
+    0% {
+        transform: translateX(0%) translateY(0%) perspective(0) translateZ(100%);
+    } 33% {
+        transform: translateX(50px) translateY(-200px) perspective(500px) translateZ(-500px);
+    } 66% {
+        transform: translateX(800px) translateY(-100px) perspective(500px) translateZ(-100px);
+    } 85% {
+        transform: translateX(400px) translateY(-50px) perspective(500px) translateZ(-60px);
+    } 100% {
+        transform: translateX(0%) translateY(0%) perspective(500px) translateZ(100%);
+    } 
+}
 
 
 .shapes__item--shape5{
-    /* position y animación */
+    bottom: 12rem;
+    left: 53%;
+    opacity: 0.7;
+    animation: mueveShape5 40s infinite;
+}
+@keyframes mueveShape5 {
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    35%{
+        transform: translateX(-600px) translateY(-500px);
+    }
+    70%{
+        transform: translateX(-800px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
 }
 
 .shapes__item--shape6{
-    /* position y animación */
+    bottom: 10rem;
+    left: 40%;
+    animation: mueveShape4 30s infinite;
 }
 .shapes__item--shape7{
-    /* position y animación */
+    top: 0%;
+    right: 5.5%;
+    z-index: 4;
+    animation-name: muestraDesdeArriba;
+    animation-duration: 2s;
+}
+@keyframes muestraDesdeArriba {
+    from{
+        transform: translateY(-70%);
+    }
+    to {
+        transform: translateY(0%);
+    }
 }
 
 /* Estilos sección Servicios */
 .layout__services{
     /* position y z-index */
+    position: relative;
+    z-index: 1;
 
     margin: 14rem 10rem;
     margin-bottom: 4rem;
@@ -246,14 +425,18 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-title);
 }
 .services__list{
-    /* flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 3rem; /* separación entre los elementos */
 }
 .services__service{
-    /* flex */
+    /* grid */
+    display: grid;
+    grid-template-columns: 2fr 5fr;
 
-    height: 100%;
+    height: 55%;
     padding: 5rem 4rem;
     margin-bottom: 4rem;
     border-radius: 3rem;
@@ -262,14 +445,27 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border: 1px solid;
     border-image-source: linear-gradient(90deg, var(--color-bg-services), rgba(255,255,255,0));
     /* efecto */
-
+    transition: all 200ms linear
+}
+.services__service:hover {
+    background-color: var(--color-borders);
 }
 
 .service__container-img{
     margin-right: 2.5rem;
     max-width: 8.5rem;
     /* Relacionado con flex grow y flex basis */
+    /* transition: all 500ms ease-in-out */
 }
+.service__container-img {
+    margin-right: 2.5rem;
+    max-width: 8.5rem;
+    /* Relacionado con flex grow y flex basis */
+}
+.service__img:hover {
+    transform: scale(1.4);
+}
+
 .service__content{
     /* Relacionado con flex grow y flex basis */
 }
@@ -280,6 +476,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     line-height: 1.4;
     margin-bottom: 3rem;
     /* efecto */
+    transition: all 500ms linear;
 }
 .service__description{
     overflow: hidden;
@@ -288,14 +485,27 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .service__more{
     /* position */
+    position: relative;
 
     font-weight: 500;
     font-size: 1.7rem;
     padding-left: 5rem;
     /* efecto */
+    transition: all 500ms linear;
 }
 
 /* pseudoelemento before */
+.service__more::before {
+    content: "";
+    width: 20%;
+    height: 0.2rem;
+    background-color: var(--color-text-body);
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    /* Efecto */
+    transition: all 500ms linear;
+}
 
 .service__more:hover,
 .service__title:hover{
@@ -307,19 +517,20 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 
 /* para generar el escalonado de las tarjetas de servicios */
 .services__service--bottom{
-    
+    margin-top: 200px;
 }
 .services__service--middle{
-    
+    margin-top: 100px;
 }
 .services__service--top{
-    
+    /* margin-top: 0px; */
 }
 
 /* coloco a las formas detrás de los servicios */
 .service-shapes__item{
     /* position y z-index */
-
+    position: absolute;
+    z-index: -1;
     pointer-events: none;
 }
 .service-shapes--shape1{
@@ -969,4 +1180,3 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 
 /* pseudoelemento after */
-
