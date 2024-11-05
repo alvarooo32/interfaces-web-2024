@@ -269,7 +269,13 @@ body{
     animation: muestroIcono 500ms linear;
 }
 /* keyframes */
-@keyframes 
+@keyframes muestroIcono{
+    form{
+        transform: translateY(-150%);
+    /* }to{
+
+    } */
+}
 
 .card__category{
     width: 100%;
