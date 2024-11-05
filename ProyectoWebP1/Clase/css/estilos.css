@@ -54,7 +54,7 @@ body{
 }
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
-    /* le asignamo 1200 para vista de escritorio */
+    /* le asignamos 1200 para vista de escritorio */
     width: var(--mx-width);
     margin: 0px auto; /* centra un elemento */
 }
@@ -84,8 +84,8 @@ body{
     cursor: pointer;
     overflow: hidden;
     /* transición */
-    transition: all 500ms linear; /**?Linear = no tiene cambios de velocidad*/
-
+    /* Modificado del original */
+    transition: all 500ms ease-in-out;
 }
 
 .header__logo h3{
@@ -94,25 +94,29 @@ body{
     font-size: 40px;
     margin-right: 65px;
     /* transición */
-    /* transition: all 500ms ease-in-out;  */
-
+    /* Modificado del original */
+    /* transition: all 500ms ease-in-out; */
 }
 
 /* efecto con keyframes - hover en el Logo */
 .header__logo:hover h3{
-    animation: desdeDerecha 1000ms linear;
+    animation: desdeDerecha 500ms;
 }
-@keyframes desdeDerecha{
-    from{
-        transform: translateX(200%);
+@keyframes desdeDerecha {
+    from {
+        transform: translateX(250%);
     }
-    /* to{
-        transform: translateX(0%);
+    /* to {
+        transform: 0%;;
     } */
 }
 
 /* efecto hover en Logo */
-
+.header__logo:hover {
+    background-color: var(--color-backgroung);
+    color: black;
+    border-radius: 2px;
+}
 
 .header__logo .logo__gear{
     display: block;
@@ -120,51 +124,82 @@ body{
     font-size: 30px;
     margin-top: 4px;
     margin-left: 26px;
-
     /* A la hora de crear animación */
-
+    animation: giraRueda 4s infinite linear;
 }
 
 /* animación logo rueda */
-
+@keyframes giraRueda {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
 
 /* efecto de desaparece y vuelve keyframes */
-
+.header__logo:hover .logo__gear {
+    animation: desdeAbajo 1s linear;
+}
+@keyframes desdeAbajo {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        /*Desaparece*/
+        transform: translateY(200%) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
 
 .header__menu{
     float: right;
     height: 70px;
     background: transparent;
 }
-.menu__list li{
+.list__item {
     font-size: 24px;
     display: inline-block; /* puedo flotar con el float o bien mediante inline-block. Funcionaría igual */
     margin: 0px 20px 0px 20px;
     letter-spacing: 1px;
     line-height: 70px;
 }
-.menu__list li a{
+.list__item a {
     display:block;
     color: var(--color-text-white);
     text-decoration: none;
     /* transición */
+    transition: all 500ms;
 }
 /* hover */
-
+.list__item a:hover {
+    color: var(--color-primary);
+    transform: scale(1.2);
+}
 /* Maquetando el Banner */
 .content__banner{
     width: 95.5%;
     height: 100px;
     border: 10px solid var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/bakbaner.png");
+    background: url("../img/backbanner.png");
     background-position: -200px -200px;
     margin: 20px auto;
     overflow: hidden;
     /* animación */
+    animation: backBanner 10s linear infinite;
+}
+/* keyframes */
+@keyframes backBanner {
+    from {
+        background-position: 0px 0px;
+    } to {
+        background-position: -200px -200px;
+    }
 }
 
-/* keyframes */
 
 .content__banner h1{
     display: block;
@@ -176,10 +211,23 @@ body{
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
     /* animación */
+    animation: mueveTexto 10s linear infinite;
 }
-
 /* keyframes */
-
+@keyframes mueveTexto {
+    0% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(100%) rotate(60deg);
+    }
+    75% {
+        transform: translateX(50%) rotate(120deg);
+    }
+    100% {
+        transform: translateX(0%) rotate(360deg);
+    }
+}
 /* Tarjetas */
 .cards__card{
     float: left;
@@ -192,10 +240,13 @@ body{
     margin-top: 40px;
     cursor: pointer;
     /* transicion */
+    transition: all 500ms;
 
 }
 /*efecto hover en las cartas */
-
+.cards__card:hover{
+    background-color: var(--color-bg);
+}
 
 .cards__card:last-child{
     margin-right: 0px;
@@ -211,8 +262,14 @@ body{
     margin: 0px auto;
 }
 /*efecto hover en la carta modificamos card__icon */
-
+.cards__card:hover .card__icon{
+    color: var(--color-primary);
+    /* font-size: 60px; */
+    transform: scale(1.1);
+    animation: muestroIcono 500ms linear;
+}
 /* keyframes */
+@keyframes 
 
 .card__category{
     width: 100%;
@@ -254,7 +311,7 @@ body{
     width: auto;
     height: 45px;
     line-height: 49px;
-    background: url("../img/pxvar.png"), var(--color-text-white);
+    background: url("../img/pxgray.png"), var(--color-text-white);
     box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
     font-size: 30px;
     font-family: "BebasNeue";
@@ -439,7 +496,7 @@ body{
     font-size: 40px;
     font-weight: normal;
     letter-spacing: 2px;
-    background: url("../img/pxvar(--color-gray).png"), var(--color-text-white);
+    background: url("../img/pxgray.png"), var(--color-text-white);
     box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
     margin: 0px auto;
     margin-top: 20px;
@@ -538,7 +595,7 @@ body{
 }
 .footer__title{
     display: block;
-    background: url("../img/pxvar.png"), var(--color-text-white);
+    background: url("../img/pxgray.png"), var(--color-text-white);
     height: 50px;
     letter-spacing: 2px;
     text-align: center;
