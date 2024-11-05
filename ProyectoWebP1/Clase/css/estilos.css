@@ -211,21 +211,29 @@ body{
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
     /* animación */
-    animation: mueveTexto 10s linear infinite;
+    animation: mueveTexto 10s linear;
 }
 /* keyframes */
 @keyframes mueveTexto {
     0% {
-        transform: translateX(0%);
+        transform: translateX(-400%);
+        transform: scale(1.3);
+        opacity: -1;
     }
     25% {
-        transform: translateX(100%) rotate(60deg);
+        transform: translateX(400%);
+        /* transform: scale(1.3); */
+        /* opacity: -1; */
     }
     75% {
-        transform: translateX(50%) rotate(120deg);
+        transform: translateX(-400%);
+        /* transform: scale(2.0); */
+        /* opacity: -1; */
     }
     100% {
-        transform: translateX(0%) rotate(360deg);
+        transform: translateX(0%);
+        /* transform: scale(1.8); */
+        /* opacity: -1; */
     }
 }
 /* Tarjetas */
@@ -244,8 +252,9 @@ body{
 
 }
 /*efecto hover en las cartas */
-.cards__card:hover{
-    background-color: var(--color-bg);
+.cards__card:hover {
+    background-color: black;
+    transform: scale(1.1);
 }
 
 .cards__card:last-child{
@@ -262,43 +271,61 @@ body{
     margin: 0px auto;
 }
 /*efecto hover en la carta modificamos card__icon */
-.cards__card:hover .card__icon{
-    color: var(--color-primary);
-    /* font-size: 60px; */
-    transform: scale(1.1);
+.cards__card:hover .card__icon {
+    color:#37bcf9;
+    font-size: 60px;
     animation: muestroIcono 500ms linear;
 }
 /* keyframes */
-@keyframes muestroIcono{
-    form{
+@keyframes muestroIcono {
+    from {
         transform: translateY(-150%);
-    /* }to{
-
-    } */
+    } to {
+        transform: translateY(0%);
+    }
 }
-
 .card__category{
     width: 100%;
     height: 50px;
     font-family: "TrebuchetMS";
-    font-size: 21px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     color: var(--color-text-title);
     transition: all 500ms;
 }
 /*efecto hover en la carta - modificamos card_category */
-
+.cards__card:hover .card__category {
+    color: white;
+    animation: muestroCategoria 600ms;
+}
+@keyframes muestroCategoria {
+    from {
+        transform: translateY(-700%);
+    } to {
+        transform: translateY(0%);
+    }
+}
 .card__description{
     font-family: "TrebuchetMS";
     text-align: center;
     color: var(--color-text-title);
     font-size: 14px;
     /* transición */
+    transition: all 500ms;;
 }
 /* efecto de hover en la carta. tocamos card__description */
-
-
+.cards__card:hover .card__description {
+    color: white;
+    animation: muestroDescripcion 700ms;
+}
+@keyframes muestroDescripcion {
+    from {
+        transform: translateX(-200%);
+    } to {
+        transform: translateX(0%);
+    }
+}
 .clearfix{
     float: none;
     clear: both;
@@ -350,9 +377,12 @@ body{
     background-color: transparent;
     color: var(--color-backgroung);
     /* transición para el focus */
+    transition: all 500ms;
 }
 /* obtengo foco en input[type="text"] */
-
+.lateral__search input[type="text"]:focus {
+    color: var(--color-primary);
+}
 
 .lateral__search input[type="button"],
 .lateral__search input[type="text"]{
@@ -481,10 +511,13 @@ body{
     transform: translateX(-80%); /*lo desplazo para que cuando se lance el hover se vea el movimiento de la traslación*/
     opacity: 0; /*lo oculto*/
     /* transición el cambio */
-
+    transition: all 1s linear;
 }
 /* efecto hover sobre el div de lateral__social */
-
+.lateral__social div:hover .social__overlay {
+    opacity: 1;
+    transform: translateX(0%);
+}
 
 /* Artículos */
 .content__articles{
@@ -597,7 +630,7 @@ body{
     text-decoration: none;
     color: var(--color-primary);
     /* transición */
-
+    transition: all 500ms;
 }
 .footer__title{
     display: block;
@@ -626,9 +659,14 @@ body{
     display: block;
     height: 40px;
     /* transición */
+    transition: all 500ms;
 }
 /* efecto de hover sobre cada li */
-
+.footer__list li a:hover {
+    padding-left: 40px;
+    color: var(--color-text-white);
+    width: 100%;
+}
 
 .content__footer iframe{
     width: 100%;
