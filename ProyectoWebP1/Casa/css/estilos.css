@@ -39,7 +39,7 @@
     --color-box-shadow: #ddd;
     --color-box-shadow2: #393d3f;
     --color-focus: #555;
-    /**--------------PROPIOS-----------------------*/
+    /**?--------------PROPIOS-----------------------*/
     --color-cinco: #000000;
     --color-cuatro: #102448;
     --color-tres: #385aa2;
@@ -134,6 +134,11 @@ body{
     margin: 0px 20px 0px 20px;
     letter-spacing: 1px;
     line-height: 70px;
+}
+.menu__list img{
+    font-size: 24px;
+    display: inline-block; /* puedo flotar con el float o bien mediante inline-block. Funcionaría igual */
+    margin: 0px 20px 0px 20px;
 }
 .menu__list li a{
     display:block;
