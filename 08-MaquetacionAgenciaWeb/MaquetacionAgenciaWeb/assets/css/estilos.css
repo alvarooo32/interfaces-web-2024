@@ -1,7 +1,7 @@
 /* Iniciamos estilos personalizados  */
 /* Definición Variables
  definimos familia de fuente que voy a utilizar */
- :root{
+:root{
     --mx-width: 1320px;
     --color-text-body:  #525260; /* cambio de black a este color */
     --color-primary: #5956e9;
@@ -33,7 +33,7 @@ body{
     width: 100%;
     height: 100%;
     font-size: 1.6rem; /* serán 16px porque he asignado font-size a 10px */
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', '18 Century', sans-serif;
     font-weight: 400; /* grosor de la fuente, +/- tamaño normal */
     line-height: 1.5;
     color: var(--color-text-body);
@@ -53,32 +53,38 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     padding: 3.5rem 3rem; /* padding superior y lateral */
 }
 .menu__navbar{
-    /* Flex + aling/justify */
+    /* Grid + aling/justify */
     display: grid;
-    grid-template-columns: 1fr 0fr 1fr;
+    grid-template-columns: 1fr 0fr 0fr;
+    /* grid-template-columns: 70% 20%; */
+    align-items: center;
+    width: 100%;
 }
 
 .navbar__logo{
+    margin-left: 40px;
     width:187px; /* no utilizo rem para que se mantenga el tamaño */
 }
 .nav__list{
-    /* Flex + aling/justify */
+    /* Grid + aling/justify */
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
 .nav__item{
     /* position */
-    position: relative;
+    position: relative; /* con esto no alteramos la posición natural de los elementos
+    y si incluimos algo dentro (pseudoelemento after, before,...) se queda dentro de los
+    límites de mi caja,...*/
     margin: 0 2.4rem;
 }
 .nav__title{
-    /* ubicamos el título y el icono */
+    /* position */
+    position: relative;
+    /* display: inline-block; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     
-    /* position */
-    position: relative;
     line-height: 6rem;
     font-weight: 500;
     color: var(--color-text-body);
@@ -88,6 +94,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .nav__title i{
     margin-left: 5px;
 }
+
 .nav__icon{
     font-size: 1rem;
     font-weight: bold;
@@ -101,17 +108,17 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     transform: scale(1.1);
 }
 
-/* pseudoelemento para subrayado en el menu */
+/* pseudoelemento para el menú */
 .nav__title::before{
     content: "";
-    position: absolute;
     height: 0.2rem;
+    width: 0;
     background-color: var(--color-primary);
+    position: absolute;
     bottom: 1.2rem;
     left: 0;
-    width: 0%;
     opacity: 0;
-    transition: all 350ms linear;
+    transition: all 300ms linear;
 }
 .nav__title:hover::before{
     width: 100%;
@@ -120,8 +127,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 
 .nav__submenu{
     /* position */
-    display:block;
+    display: block;
     position: absolute;
+
     top: 100%;
     left: 2rem;
     
@@ -132,7 +140,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     
     /* visibility, opacity y efecto */
     opacity: 0;
-    /* visibility: hidden; */
+    visibility: hidden;
     transition: all 300ms ease-in-out;
 }
 
@@ -140,9 +148,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     /* efecto */
     opacity: 0;
     transform: translateX(3rem);
-    transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out
 }
-/* efecto */
+/* efecto. Consigo que los elementos se ubiquen con delay */
 .submenu__item:nth-child(1){
     transition-delay: 100ms;
 }
@@ -155,10 +163,13 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .submenu__item:nth-child(4){
     transition-delay: 400ms;
 }
+.submenu__item:nth-child(5){
+    transition-delay: 500ms;
+}
 
 .submenu__title{
     /* position */
-    position:relative;
+    position: relative;
 
     font-size: 1.4rem;
     text-transform: capitalize;
@@ -168,27 +179,28 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     padding: 0.7rem 1.5rem;
     
     /* efecto */
-    transition: all 300ms linear;
+    transition: all 300ms ease-in-out;
 }
 
 /* efectos varios */
 .nav__item:hover>.nav__submenu{
-/* .nav__title:hover>.nav__submenu{ */
     opacity: 1;
-    /* visibility: visible; */
-    z-index: 10;
+    visibility: visible;
+    z-index: 99;
     left: 0;
 }
-
 .nav__item:hover>.nav__submenu>.submenu__item{
+    /* efecto */
     opacity: 1;
     transform: translateX(0);
+    /* visibility: visible; */
 }
 .submenu__title:hover{
     color: var(--color-primary);
-    transform: scale(1.1);
+    /* transform: scale(1.1);     */
 }
-.submenu__item::before{
+
+.submenu__item::after{
     content: "";
     height: 0.2rem;
     width: 0;
@@ -199,12 +211,32 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     left: 35%;
     transition: all 300ms linear;
 }
+/* El subrayado de los elementos será acorde al with del texto de cada elemento del submenú */
+.submenu__item:hover:nth-child(1)::after{
+    width: 52%;
+    opacity: 1;
+    left: 8%;
+}
+.submenu__item:hover:nth-child(2)::after{
+    width: 64%;
+    opacity: 1;
+    left: 8%;
+}
+.submenu__item:hover:nth-child(3)::after{
+    width: 79%;
+    opacity: 1;
+    left: 8%;
+}
+.submenu__item:hover:nth-child(4)::after{
+    width: 49%;
+    opacity: 1;
+    left: 8%;
+}
 
 /* Estilos para el Banner */
 .layout__banner{
     /* position */
     position: relative;
-
     min-height: 60rem;
     /*border: 2px solid red; */
     margin: 0 3rem;
@@ -224,7 +256,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 
     width: 50%;
     padding: 0 1.5rem;
-    z-index: 6;
+    z-index: 3;
 }
 .banner__title{
     font-size: 8rem;
@@ -248,26 +280,29 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 /* efecto */
 .banner__btn:hover{
     background-color: var(--color-bg-btn);
+    color: var(--color-bg-dark);
+    /* sombra */
+    box-shadow: 2px 2px 8px 0 var(--color-bg-btn), 4px 4px 24px 0 black, 0px 0px 48px 2px yellow;
 }
 
 .shapes__item{
     /* position y z-index */
     position: absolute;
-    z-index: 5;
+    z-index: 2;
     pointer-events: none;
 }
 .shapes__item--shape1{
     /* position y animación */
     top: 0;
     right: 0;
-    animation-name: muestraDesdeDerecha;
+    animation-name: muestraDerecha;
     animation-duration: 2s;
 }
-@keyframes muestraDesdeDerecha{
-    from{
-        transform: translateX(70%);
+@keyframes muestraDerecha{
+    0%{
+        transform: translateX(100%);
     }
-    to {
+    100%{
         transform: translateX(0px);
     }
 }
@@ -276,36 +311,36 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     /* position y animación */
     bottom: 0;
     left: 0;
-    animation-name: muestraDesdeIzquierda;
+    animation-name: muestraIzquierda;
     animation-duration: 2s;
 }
-@keyframes muestraDesdeIzquierda{
-    from{
-        transform: translateX(-70%);
+@keyframes muestraIzquierda{
+    0%{
+        transform: translateX(-50%);
     }
-    to {
+    100%{
         transform: translateX(0px);
     }
 }
 
 .shapes__item--shape3{
     /* position y animación */
-    top: 50%;
-    right: 50%;
+    top: 34%;
+    left: 50%;
     animation: mueveShape3 20s infinite;
 }
 @keyframes mueveShape3{
     0%{
-        transform: translateX(0%) translateY(0%);
+        transform: translateX(0) translateY(0);
     }
-    33%{
+    35%{
         transform: translateX(50px) translateY(-200px);
     }
-    66%{
-        transform: translateX(800px) translateY(0%);
+    70%{
+        transform: translateX(800px);
     }
     100%{
-        transform: translateX(0%) translateY(0%);
+        transform: translateX(0) translateY(0);
     }
 }
 
@@ -335,7 +370,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 
 .shapes__item--shape5{
     bottom:12rem;
-    left: 53%;
+    left:53%;
     opacity: 0.7;
     animation: mueveShape5 40s infinite;
 }
@@ -372,20 +407,19 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     animation: mueveShape4 30s infinite;
     -webkit-animation: mueveShape4 30s infinite;
 }
-
 .shapes__item--shape7{
     /* position y animación */
-    top: 0%;
-    right: 5.5%;
-    z-index: 4;
-    animation-name: muestraDesdeArriba;
+    top:0;
+    right: 10rem;
+    z-index: 1;
+    animation-name: muestraArriba;
     animation-duration: 2s;
 }
-@keyframes muestraDesdeArriba{
-    from{
-        transform: translateY(-70%);
+@keyframes muestraArriba{
+    0%{
+        transform: translateY(-50%);
     }
-    to {
+    100%{
         transform: translateY(0%);
     }
 }
@@ -431,15 +465,16 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .services__list{
     /* Grid */
+
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 3rem; /* separación entre los elementos */
 }
 .services__service{
     /* Grid */
     display: grid;
-    grid-template-columns: 2fr 5fr;
+    grid-template-columns: 1fr 2.5fr;
 
     height: 55%;
     padding: 5rem 4rem;
@@ -450,25 +485,20 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border: 1px solid;
     border-image-source: linear-gradient(90deg, var(--color-bg-services), rgba(255,255,255,0));
     /* efecto */
-    transition: all 200ms linear;
+    transition: all 300ms linear;
 }
 .services__service:hover{
-    background-color: var(--color-borders);
+    background-color: var(--color-bg-services);
 }
 
 .service__container-img{
     margin-right: 2.5rem;
     max-width: 8.5rem;
-    /* Relacionado con flex grow y flex basis */
-    /* transition: all 500ms ease-in-out; */
+    /* Relacionado con flex grow y flex basis. En grid no es necesario cambiar el tamaño aquí */
 }
-
-.service__img:hover {
-    transform: scale(1.4);
-}
-
 .service__content{
-    /* Relacionado con flex grow y flex basis */
+    /* Relacionado con flex grow y flex basis. En grid no es necesario cambiar el tamaño aquí  */
+    
 }
 .service__title{
     color: var(--color-title);
@@ -477,7 +507,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     line-height: 1.4;
     margin-bottom: 3rem;
     /* efecto */
-    transition: all 500ms linear;
+    transition: all 300ms ease-in-out
 }
 .service__description{
     overflow: hidden;
@@ -487,45 +517,43 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .service__more{
     /* position */
     position: relative;
-
+    display: inline-block;
     font-weight: 500;
     font-size: 1.7rem;
     padding-left: 5rem;
     /* efecto */
-    transition: all 500ms linear;
+    transition: all 300ms linear;
 }
 
-/* pseudoelemento before */
+/* pseudoelemento before service__more */
 .service__more::before{
     content: "";
-    width: 20%;
-    height: 0.2rem;
+    width: 3.4rem;
+    height: 1.5px;
     background-color: var(--color-text-body);
     position: absolute;
     left:0;
+    /* top:10%; */
     bottom: 50%;
-    /* efecto */
-    transition: all 500ms linear;
-}
-.service__more:hover::before{
-    background-color: var(--color-primary);
 }
 
 .service__more:hover,
 .service__title:hover{
     color: var(--color-primary);
 }
+.service__more:hover::before{
+    background-color: var(--color-primary);
+}
 
 /* para generar el escalonado de las tarjetas de servicios */
 .services__service--bottom{
-    margin-top: 200px;
+    margin-top: 20rem;
 }
 .services__service--middle{
-    margin-top: 100px;
-    
+    margin-top: 10rem;
 }
 .services__service--top{
-    /* margin-top: 0px; */
+    margin-top: 0rem;
 }
 
 /* coloco a las formas detrás de los servicios */
@@ -533,29 +561,57 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     /* position y z-index */
     position: absolute;
     z-index: -1;
-
     pointer-events: none;
 }
 .service-shapes--shape1{
     /* position */
-
+    top:-10%;
+    right: 26%;
 }
 .service-shapes--shape2{
     /* position */
     opacity: 0.6;
+    top: 0%;
+    right: 30%;
 }
 .service-shapes--shape3{
     /* position y animación */
-
+    opacity: 0.4;
+    top: 27%;
+    right: 31%;
+    animation: mueveBolaRosita 10s infinite;
+}
+/* opción 1 */
+/* @keyframes mueveBolaRosita {
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    25%{
+        transform: translateY(450px);
+    }
+    50%{
+        transform: translateX(250px) translateY(450px);;
+    }
+    70%{
+        transform: translateX(350px) translateY(150px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
+} */
+@keyframes mueveBolaRosita {
+    100% {
+        transform: rotate(360deg) translateX(300px) rotate(-360deg) translateX(-300px);
+    }
 }
 
 /* Estilos para la sección de Proyectos */
 .layout__projects{
     /* position y z-index */
-
+    position: relative;
+    z-index: 1;
     background-color: var(--color-bg-projects);
     padding: 14rem 10rem;
-
 }
 .projects__container{
     max-width: var(--mx-width);
@@ -568,38 +624,74 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     text-transform: capitalize;
 }
 .projects__categories{
-    /* Flex */
+    /* Grid */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 3fr;
+    z-index: 1;
+
     gap: 7rem;
     margin-bottom: 5.5rem;
 }
 .categories__item{
     /* position */
+    position: relative;
 
     font-size: 2rem;
     font-weight: 500;
     cursor: pointer;
     padding: 0.8rem 0;
     /* efecto */ 
-
-}
-.categories__item:hover{
-    /* Efecto */
-    color: var(--color-primary);
-    transform: scale(1.1);
+    transition: all 300ms linear;
 }
 
 .projects__all{
-    /* flex */
+    /* Grid */
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* width: 0; */
     gap: 4rem 7rem;
 }
 .projects__project{
-     /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
-    /* width: calc(50% - 3.5rem); */
+    width: calc(100% - 3.5rem); 
+    /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
 }
+
+/* Subrayado mediante pseudoelemento before */
+.categories__item::before{
+    content: "";
+    height: 0.2rem;
+    width: 0%;
+    background-color: var(--color-primary);
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0;
+    opacity: 0;
+    transition: all 300ms linear;
+}
+/* opción 1. subrayados todos por igual en cuanto al tamaño */
+.categories__item:hover::before{
+    opacity: 1;
+    width: 95%;
+}
+/* El subrayado de los elementos será acorde al with del texto de cada elemento del submenú */
+.categories__item:hover:nth-child(1)::before{
+    width: 95%;
+    opacity: 1;
+}
+.categories__item:hover:nth-child(2)::before{
+    width: 80%;
+    opacity: 1;
+}
+.categories__item:hover:nth-child(3)::before{
+    width: 85%;
+    opacity: 1;
+}
+/* Subrayado mediante border-bottom */ 
+/*   .categories__item--active, 
+ .categories__item:hover{
+    border-bottom: 3px solid var(--color-primary);
+} */
+
 .project__container-img{
     width: 100%;
     border-radius: 3rem 3rem 0 0;
@@ -608,7 +700,11 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .project__img{
     width:100%;
     /* efecto */
-    /* Que se haga grande lentamente */
+    transition: all 2s ease-in-out;
+}
+.project__container-img:hover .project__img{
+/* .projects__project:hover .project__img{ */
+    transform: scale(1.2);
 }
 
 .project__content{
@@ -623,10 +719,10 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-title);
     margin-bottom: 1rem;
     /* efecto */
+    transition: all 300ms linear;
 }
 .project__title:hover{
-    /* efecto */
-    color: var(--color-primary);
+    color: var(--color-banner);
 }
 
 .project__tags{
@@ -634,26 +730,41 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .project-shapes__item{
     /* position y z-index */
+    position: absolute;
+    z-index: -1;
 
     pointer-events: none;
 }
 .project-shapes--shape1{
-    /* position */
-    
+    top: 4%;
+    right: 11%;
     opacity: 0.5;
 }
 .project-shapes--shape2{
-    /* position */
-
-    opacity: 0.5;
-    /* animación */
-
+    top: 8%;
+    right: 35%;
+    opacity: 0.3;
+    animation: mueveBolaRosita 20s infinite;
 }
 .project-shapes--shape3{
-    /* position */
-
-    opacity: 0.8;
-    /* animación */
+    top: 90px;
+    right: 200px;
+    opacity: 0.5;
+    animation: mueveBolaRosita 40s infinite;
+}
+@keyframes moveProjectShape{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    35%{
+        transform: translateX(150px) translateY(-50px);
+    }
+    70%{
+        transform: translateX(-50px) translateY(100px);
+    }
+    100%{
+        transform: translateX(0) translateY(0);
+    }
 }
 
 /* Estilos para estadísticas y Mejores clientes */
@@ -684,19 +795,24 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-text-description);
 }
 .stats__progress{
-    /* Flex */
+    /* Grid */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    /* align-items: center; */ 
     gap: 3rem;
 }
 .stats__stat{
-    width: 25%;
+    /* width: 25%; no es necesario en la distribución mediante grid */
     text-align: center;
     padding: 7rem 2rem;
     border-radius: 2rem;
     border: 1px solid transparent; /* inapreciable */
 }
 /* efecto */
+.stats__stat:hover{
+    background: linear-gradient(180deg,var(--color-bg-dark), grey);
+    border: 1px solid var(--color-hover-dark);
+}
 
 .stat__icon>img{
     margin: 0 auto;
@@ -721,13 +837,12 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 /* Estilos para Reseñas */
 .layout__reviews{
     /* position y z-index */
-
+    position: relative;
+    z-index: 1;
     padding-top: 7rem;
     padding-bottom: 5rem;
 }
 .reviews__container{
-    /* Flex */
-
     max-width: var(--mx-width);
     margin: 0 auto;
     gap: 2rem;
@@ -743,13 +858,19 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     font-size: 2rem;
 }
 .reviews__content{
-    /* Flex + align */
+    /* Grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 
     gap: 2rem;
 }
 .reviews__review{
     padding-top: 2rem;
     padding-bottom: 2rem;
+
+    /* asigno mismo tamaño a nivel de fila para alinear */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 .review__company{
     display: inline-block;
@@ -762,13 +883,18 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin-bottom: 4rem;
 }
 .review__author{
-    /* Flex */
-
+    /* Grid */
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+.review__img{
+    width: 50px;
+    height: 50px;
 }
 .author__container-img{
     border-radius: 90px;
     overflow: hidden;
-    width:10%;
+    /* width:10%; */
 }
 .author__name{
     display: block; /* creo un salto de línea */
@@ -788,50 +914,73 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .review-shapes__item{
     /* position + z-index */
     pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    right: 14%;
+    opacity: 0.5;
 }
 
 /* Estilos zona Mejores Clientes */
 .layout__clients{
     /* position + z-index */
-
+    position: relative;
+    z-index: 1;
 }
 .clients__header{
     text-align: left;
 }
 .clients__title{
-    width: 50%;
+    width: 60%;
     line-height: 1.2;
     font-weight: 500;
 }
 .clients__description{
-    width: 40%;
+    width: 50%;
     text-align: left;
     margin: 0;
     margin-bottom: 6rem;
 }
 .clients__logos{
-    /* Flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
 
     gap: 3rem;
 }
 .clients__item{
-    /* Flex-basis */
-
+    /* Flex-basis. En grid no es necesario cambiar el tamaño aquí  */
+    display: flex;
+    justify-content: center;
 }
 .clients__img{
     filter: grayscale(25%);
     opacity: 0.5;
+    
     /* efecto */
+    transition: all 500ms ease-in-out;
 }
-
+.clients__item:hover > .clients__img{
+    filter: grayscale(0%);
+    opacity: 1;
+    cursor: pointer;
+}
 .client-shapes__item{
     /* position + z-index */
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    right: 0;
+    /* width: 60%; */
 
 }
 
 /* Estilos últimas noticias */
 .layout__news{
     /* position + z-index */
+    position: relative;
+    z-index: 1;
 
     padding: 14rem 0;
 }
@@ -852,10 +1001,14 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin: 0 auto;
 }
 .news__list{
-    /* Flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .news__new{
-    /* Flex + align */
+    /* Grid + align */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     gap: 2rem;
     padding-top: 4rem;
@@ -865,13 +1018,18 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border-top: 1px solid var(--color-borders);
     border-bottom: 1px solid var(--color-borders);
     /* efecto */
-
+    transition: all 300ms ease-in-out;
 }
-
+.news__new:hover{
+    /* border-top-color: var(--color-primary); */
+    border-top: 2px solid var(--color-primary);
+    border-top-color: var(--color-primary);
+}
 .news__new:last-child{
     border-left: 1px solid var(--color-borders);
     padding-left: 2.5rem;
 }
+
 .news__container-img{
     overflow: hidden;
     border-radius: 3rem;
@@ -880,12 +1038,19 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border-radius: 3rem;
 
     /* efecto */
+    transition: all 2s ease-in-out;
+}
 
+.news__new:hover .new__img{
+    transform: scale(1.1);
 }
 
 .new__content{
-    /* flex */
+    /* Grid */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
+
 .new__title{
     font-size: 2.4rem;
     line-height: 1.4;
@@ -893,7 +1058,12 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-title);
     margin-bottom: 2rem;
     /* efecto */
+    transition:all 300ms ease-in-out;
+}
 
+.new__title:hover,
+.new__more:hover{
+    color: var(--color-primary)
 }
 
 .new__description{
@@ -908,40 +1078,43 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     font-size: 1.8rem;
     color: var(--color-hover-dark);
     /* efecto */
-
+    transition: all 300ms ease-in-out;
 }
 .new__icon{
     font-size: 1.3rem;
     vertical-align: middle;
 }
 .new-shapes__item{
-    /* position + z-index */
-
+    /* position y z-index */
+    position: absolute;
+    z-index: -1;
 }
 .new-shapes--shape1{
-    /* position */
-
+    top: 14rem;
+    left: 31.5rem;
     opacity: 0.7;
 }
 .new-shapes--shape2{
-    /* position */
-
+    right: 0;
+    top:12rem;
     opacity: 0.7;
 }
 .new-shapes--shape3{
-    /* position */
-
+    bottom: 5rem;
+    left: 0;
     opacity: 0.7;
 }
 .new-shapes--shape4{
-    /* position */
-
+    bottom: 8rem;
+    right: 16rem;
     opacity: 0.7;
 }
 
 /* Estilos para la sección de Contacto */
 .layout__contact{
     /* position + z-index */
+    position: relative;
+    z-index: 1;
 
     overflow: hidden;
     padding: 0; /* inicializo a 0 */
@@ -950,6 +1123,17 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     /* background-color: var(--color-primary); */
 }
 /* pseudoelemento before */
+.layout__contact::before{
+    content: "";
+    position: absolute;
+    width:100%;
+    height: 70rem;
+    top: 0;
+    left:0;
+    right: 0;
+    background-color: var(--color-primary);
+    z-index: -1;
+}
 
 .contact__container{
     max-width: var(--mx-width);
@@ -962,8 +1146,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .contact__subtitle{
     display: inline-block;
-    color: var(--colog-bg-btn);
-    font-size: 2rem;
+    color: var(--color-bg-btn);
+    font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
@@ -979,6 +1163,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .contact__btn{
     display: inline-block;
     /* position + z-index */
+    position: relative;
+    z-index: 1;
 
     overflow: hidden;
     padding: 2.3rem 5.5rem;
@@ -988,10 +1174,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     font-size: 1.4rem;
     text-align: center;
     /* efecto */
+    transition: all 500ms ease-in-out;
+}
 
+.contact__btn:hover{
+    background-color: var(--colog-bg-btn);
 }
 
 .contact__images{
+    /* position */
     position: relative;
     text-align: center;
     border-bottom: 1px solid var(--color-borders);
@@ -1004,54 +1195,53 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin-bottom: -0.8rem;
 }
 .contact__thumb--laptop{
-    /* position */
-
+    position: absolute;
+    bottom: 0;
+    left: 16rem;
 }
 .contact__thumb--mobile{
-    /* position */
+    position: absolute;
+    bottom: 0;
+    right: 12rem;
 }
 .backshapes__item{
-    /* position + z-index */
+    position:absolute;
+    z-index: -1;
 }
 .backshapes--shape1{
-    /* position */
+    top:0;
+    left: 32%;
 }
 .backshapes--shape2{
-    /* position */
-
+    top:18rem;
+    left: 18%;
     opacity: 0.5;
-    /* animación */
-
+    animation: mueveShape3 20s infinite;
 }
 .backshapes--shape3{
-    /* position */
-
-    /* animación */
-
+    top:31%;
+    left: 20%;
+    animation: mueveShape4 25s infinite;
 }
 .backshapes--shape4{
-    /* position */
-
-    /* animación */
-    
+    top: 44%;
+    left: 17%;
+    animation: mueveShape3 30s infinite;
 }
 .backshapes--shape5{
-    /* position */
-
-    /* animación */
-    
+    top: 50%;
+    right: 21%;
+    animation: mueveShape4 30s infinite;
 }
 .backshapes--shape6{
-    /* position */
-
-    /* animación */
-    
+    top: 26%;
+    left: 35%;
+    animation: mueveShape3 35s infinite;
 }
 .backshapes--shape7{
-    /* position */
-
-    /* animación */
-    
+    top: 25%;
+    right: 10%;
+    animation: mueveShape4 35s infinite;
 }
 
 /* Estilos del Pié de Página */
@@ -1064,10 +1254,15 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .footer__top{
     padding-bottom: 4rem;
+    
 }
 .footer__social{
-    /* flex + justify + align */
-
+    /* Grid + justify + align */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+.social__link{
+    text-align: center;
 }
 .social__img{
     display: inline-block;
@@ -1075,14 +1270,16 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     font-size: 3rem;
     padding: 0.5rem;
     /* efecto */
-
+    transition: all 500ms ease-in-out;
 }
 
 .footer__main{
-    /* flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: 4fr 3fr;
 }
 .footer_fleft{
-    /* flex */
+    /* Grid */
 }
 .fleft__container{
     border-right: 1 px solid var(--color-borders);
@@ -1102,11 +1299,14 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     font-size: 1.7rem;
     margin-bottom: 4rem;
 }
-.fleft__group{
+.form__group{
     /* position */
 
-    /* flex + align */
-
+    /* Grid + align */
+    display: grid;
+    grid-template-columns: 0.5fr 8fr 2fr;
+    align-items: center;
+    
     background-color: var(--color-secondary);
     border-radius: 20px;
     height: 7.2rem;
@@ -1114,14 +1314,16 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     box-shadow: 0 24px 48px -15px var(--color-borders);
     
 }
-.fleft__mail-icon{
+.form__mail-icon{
     display: inline-block;
     margin-left: 2rem;
 }
-.fleft__form-control{
+.form__form-control{
     /* position */
 
-    /* flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 
     display: block;
     padding: 0.5rem 1.5rem;
@@ -1131,7 +1333,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-title);
     margin-left: 1rem;
 }
-.fleft__btn{
+.form__btn{
     cursor: pointer;
     height: 5.2rem;
     border: none;
@@ -1141,14 +1343,20 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border-radius: 16px;
     padding: 1rem 3rem;
     /* efecto */
+    transition: all 500ms ease-in-out;
+}
+.form__btn:hover{
+    background-color: var(--color-banner);
 }
 
 .footer__fright{
-    /* flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 
 }
 .footer__widget{
-    /* flex-basis */
+    /* Flex-basis. En grid no es necesario cambiar el tamaño aquí  */
 
 }
 .widget__title{
@@ -1166,14 +1374,16 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 
 .footer__bottom{
-    /* flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: 7fr 3fr;
 
     border-top: 1px solid var(--color-borders);
     padding: 2.5rem 0;
     
 }
 .footer__copyright{
-    /* flex-basis */
+    /* flex-basis. En grid no es necesario cambiar el tamaño aquí  */
 }
 .copyrigth__text{
     display: inline-block;
@@ -1183,17 +1393,34 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     display: inline;
 }
 .footer__links{
-    /* flex-basis */
+    /* flex-basis. En grid no es necesario cambiar el tamaño aquí  */
 }
 .footer__flinks{
     /* position */
+    position: relative;
 
-    /* flex */
+    /* Grid */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 
     gap: 2rem;
 }
 .flinks__title{
     /* efecto */
+    transition: all 300ms ease-in-out;
+}
+.flinks__title:hover{
+    color: var(--color-banner);
 }
 
 /* pseudoelemento after */
+.flinks__item--separator::after{
+    content:"";
+    height: 4px;
+    width: 4px;
+    background-color: var(--color-text-body);
+    border-radius: 50%;
+    position: absolute;
+    top: 35%;
+    left: 55%;
+}
