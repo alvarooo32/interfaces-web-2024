@@ -1,3 +1,23 @@
-/*display : grid => Genera el elemento padre (Grid Container) es el elemento padre donde vas a manejar en cuadriculas a los (Grid item) elementos hijo
-grid area => pueden constar de una o mas celdas para colocar elementos de manera mas eficiente dentro de una cuadricula.**/
+/*
+-display : grid => Genera el elemento padre (Grid Container) es el 
+elemento padre donde vas a manejar en cuadriculas a los (Grid item) 
+elementos hijo
+
+-grid area => pueden constar de una o mas celdas para colocar 
+elementos de manera mas eficiente dentro de una cuadricula.
+
+-grid-template-columns: => cada medida que agregues sera el 
+tamaño de una columna (Define el width de las columnas)
+
+-grid-template-rows: => cada medida que agregues sera el 
+tamaño de una fila (Define el height de las filas)
+
+-direction: => se puede cambiar la direccion del grid
+
+--------------------UNIDADES MEDIDAS-------------------------------
+-auto: se estira completamente para ocupar todo el ancho disponible 
+
+
+
+**/
 
