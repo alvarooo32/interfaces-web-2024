@@ -39,6 +39,12 @@
     --color-box-shadow: #ddd;
     --color-box-shadow2: #393d3f;
     --color-focus: #555;
+    /**--------------PROPIOS-----------------------*/
+    --color-cinco: #000000;
+    --color-cuatro: #102448;
+    --color-tres: #385aa2;
+    --color-dos: #6a97ff;
+    --color-uno: #a5daff;
 }
 
 /* Estilos Generales */
@@ -50,7 +56,7 @@ html{
     overflow-x: hidden;
 }
 body{
-    background: url("../img/pattern.png");
+    background: white;
 }
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
@@ -67,7 +73,7 @@ body{
 .header{
     width: 100%;
     height: 70px;
-    background-color: var(--color-bg);
+    background-color: var(--color-tres);
     font-family: "BebasNeue";
     color: var(--color-text-white);
 }
@@ -76,7 +82,7 @@ body{
     float: left;
     width: 200px;
     height: 50px;
-    background-color: var(--color-primary);
+    background-color: var(--color-tres);
     text-align: center;
     margin-top: 8px;
     margin-left: 20px;
