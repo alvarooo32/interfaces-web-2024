@@ -112,9 +112,14 @@ body{
 
 .header__search input[type="text"] {
     padding: 8px;
+<<<<<<< HEAD
     height: 35px;
     border: 1px solid #ccc;
     border-radius: 4px 4px 4px 4px;
+=======
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+>>>>>>> 59bccd6d401f5c57b80c5251040354f20e971d24
 }
 
 .search__icon {
@@ -122,6 +127,7 @@ body{
     background-color: #0073e6;
     color: white;
     border: none;
+<<<<<<< HEAD
     border-radius: 4px 4px 4px 4px;
     cursor: pointer;
 }
@@ -159,6 +165,42 @@ body{
 .content__banner{
     display: grid;
     grid-template-rows: 1fr;
+=======
+    border-radius: 0 4px 4px 0;
+    
+}
+
+/* Estilos para la lista de menú */
+.menu__list { /*!FALTA ANIMACION LETRAS*/
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+
+}
+
+.menu__list img {
+    width: 25px;
+    height: 25px;
+}
+
+
+/*?--------------------------------------------------FIN BARRA DE NAVEGACION-------------------------------------------------------------------------------------------*/
+.menu__productos{ /*!FALTA ANIMACION LETRAS*/
+    height: 49.5px;
+    display: grid;
+    background-color: #eeeeee;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    font-family: "BebasNeue";
+    font-size:large;   
+    text-align: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 4); /* Sombra*/
+}
+
+/* Maquetando el Banner */
+.content__banner{
+>>>>>>> 59bccd6d401f5c57b80c5251040354f20e971d24
     position: relative;
     width: var(--mx-width);
     height: 500px;
@@ -170,18 +212,31 @@ body{
 }
 /* keyframes */
 @keyframes bannerCambio {
+<<<<<<< HEAD
     50%{
         
     } 
+=======
+    33%{
+        
+    } 
+    66%{
+        
+    }
+>>>>>>> 59bccd6d401f5c57b80c5251040354f20e971d24
     100%{
         
     }
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> 59bccd6d401f5c57b80c5251040354f20e971d24
 }
 
 /*?-----------------------------------------FIN IMAGEN BANNER----------------------------------------------------------------------------------------------------------------*/
 
+<<<<<<< HEAD
 .card_title{
     display: grid;
     grid-template-rows: 1fr;
@@ -206,6 +261,19 @@ body{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     border: #000000 solid 3px;
+=======
+
+
+/* Tarjetas */
+.content__cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.cards__card{ /** ULTIMA VEZ */
+    width: 300px;
+    height: 300px;
+>>>>>>> 59bccd6d401f5c57b80c5251040354f20e971d24
     box-shadow: 1px 3px 5px #969696;
     overflow: hidden;
     margin: 22px;
@@ -215,7 +283,10 @@ body{
     cursor: pointer;
     /* transicion */
     transition: all 500ms;
+<<<<<<< HEAD
     border-radius: 8%;
+=======
+>>>>>>> 59bccd6d401f5c57b80c5251040354f20e971d24
 }
 /*efecto hover en las cartas */
 
