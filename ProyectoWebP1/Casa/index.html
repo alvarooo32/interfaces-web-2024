@@ -5,7 +5,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <!-- user_scalable = no - es para que el usuario no pueda realizar zoom con los 2 dedos. -->
     <meta name="viewport" content="width=device-width, user-scalable=no"> 
-    <title>Proyecto Web</title>
+    <title>SAMAS HOME</title>
     <link rel="shortcut icon" href="./img/iconoWeb.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset_estilos.css">
     <link rel="stylesheet" href="css/estilos.css">
@@ -15,38 +15,59 @@
     <!-- Inicio Cabecera -->
     <header class="header">
         <div class="header__wrap">
-            <div class="header__logo"> 
-                <span class="logo__gear"><img src="./img/logo1.png"></img></span>
-                <h3>BLOG</h3>
-            </div>
             <nav class="header__menu">
-                <ul class="menu__list">
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">BLOG</a></li>
-                    <li><a href="#">FORMACIÓN</a></li>
-                    <li><a href="#">CONTACTO</a></li>
-                </ul>
+                <!--LOGO-->
+                <div class="header__logo"> 
+                    <span class="logo__gear"><img src="./img/logo1.png"></img></span>            
+                </div>
+                <!--Buscador-->
+                <div class="header__search">
+                    <form>
+                        <input type="text">
+                        <input type="button" value="L" class="search__icon">
+                    </form>
+                </div>
+                <!--Lista Menu-->
+                <div class="menu__list">
+                    <img src="./img/barraNav_usuario.png" alt="usuario">
+                    <img src="./img/barraNav_corazon.png" alt="me gusta">
+                    <img src="./img/barraNav_cestaCompra.png" alt="cesta">
+                    <img src="./img/barraNav_menu.png" alt="menu">
+                </div>
             </nav>
         </div>
-        
-    </header>
-    <!-- fin de la Cabecera -->
+        <!-- fin de la Cabecera -->
     
-    <main class="content__wrap">
-        <section class="content__info">
-            <!-- Inicio Banner -->
+        <main class="content__wrap">
+            <section class="content__info">
+                <!-- Inicio Banner -->
+                <div class="container__menu">
+                    <ul class="menu__productos">
+                        <li>OFERTAS</li>
+                        <li>MUEBLES</li>
+                        <li>SOFÁS</li>
+                        <li>COCINA</li>
+                        <li>DECORACIÓN</li>
+                        <li>PLANIFICADOR</li>
+                    </ul>
+                </div>
+            </section>
+        </main>  
+    </header>
+    
             <div class="content__banner">
-                <h1>Diseño de CSS por Alumn@</h1>
+                <title>BANNER</title>
             </div>
             <!-- fin de Banner -->
             <!-- Inicio Tarjetas -->
+             <div class="card_title">
+                <h1>Ofertas en <span style="color:  #6cb0c7;">colchones, sofás, muebles y escritorios...</span> en Málaga</h1> <!--https://muebele.es/-->
+            </div>
             <div class="content__cards">
                 <div class="cards__card">
-                    <p class="card__icon">H</p>
-                    <h2 class="card__category">Desarrollo Web</h2>
-                    <p class="card__description">
-                        Aprende los principales lenguajes para desarrollar webs. !Conviértete en Web Master!
-                    </p>
+                    <img src="../Casa/img/escritotio.jpg" alt="escritorio">
+                    <h2 class="card__category">Escritorio de oficina</h2>
+                    <p class="card__description">199.00 € 179,10 €</p>
                 </div>
                 <div class="cards__card">
                     <p class="card__icon">_</p>
@@ -67,13 +88,6 @@
                     <h2 class="card__category">Redes e Internet</h2>
                     <p class="card__description">
                         Aprende a configurar y administrar redes informáticas y servidores.
-                    </p>
-                </div>
-                <div class="cards__card">
-                    <p class="card__icon">a</p>
-                    <h2 class="card__category">Bases de Datos</h2>
-                    <p class="card__description">
-                        Aprende a instalar y administrar bases de datos.
                     </p>
                 </div>
             </div>
