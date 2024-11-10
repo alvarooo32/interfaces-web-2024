@@ -40,11 +40,7 @@
     --color-box-shadow2: #393d3f;
     --color-focus: #555;
     /**?--------------PROPIOS-----------------------*/
-    --color-cinco: #000000;
-    --color-cuatro: #102448;
-    --color-tres: #385aa2;
-    --color-dos: #6a97ff;
-    --color-uno: #a5daff;
+    --color-principal: #6cb0c7;
 }
 
 /* Estilos Generales */
@@ -127,7 +123,7 @@ body{
 }
 
 /* Estilos para la lista de menú */
-.menu__list { /*!FALTA ANIMACION LETRAS*/
+.menu__list { 
     justify-self: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -139,10 +135,27 @@ body{
     width: 25px;
     height: 25px;
 }
+/*!Para que cuando pase el cursor por encima EL MENU AUMENTE*/
+.accion1:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.accion2:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.accion3:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.accion4:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
 
 
 /*?--------------------------------------------------FIN BARRA DE NAVEGACION-------------------------------------------------------------------------------------------*/
-.menu__productos{ /*!FALTA ANIMACION LETRAS*/
+.menu__productos{ 
     height: 49.5px;
     display: grid;
     background-color: #eeeeee;
@@ -154,6 +167,32 @@ body{
     align-items: center;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 4); /* Sombra*/
 }
+/*!Para que cuando pase el cursor por encima EL SUBMENU AUMENTE*/
+.opcion1:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.opcion2:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.opcion3:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.opcion4:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.opcion5:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.opcion6:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/*?--------------------------------------------------FIN SUBMENU-------------------------------------------------------------------------------------------*/
 
 /* Maquetando el Banner */
 .content__banner{
@@ -166,15 +205,17 @@ body{
     overflow: hidden;
     background-image: url("../img/black_friday1.jpg");
     background-size: 100% 100%;
-    animation: bannerCambio infinite 60s;
+    animation: bannerCambio infinite 30s;
 }
 /* keyframes */
 @keyframes bannerCambio {
     50%{
-        
+        background-image: url(../img/black_friday1.jpg);
+        opacity: 1;
     } 
     100%{
-        
+        background-image: url(../img/black_friday2.jpg);
+        opacity: 1;
     }
     
     
@@ -195,188 +236,252 @@ body{
 /* Tarjetas */
 .content__cards{
     display: grid;
-    margin-left: 15px;
-    margin-right: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
-.cards__card{ /** ULTIMA VEZ */
-    width: auto;
-    height: 300px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    border: #000000 solid 3px;
-    box-shadow: 1px 3px 5px #969696;
+.cards__card{
+    width: 380px;
+    height: 560px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
-    margin: 22px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 30px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 25px;
     cursor: pointer;
+    border-radius: 3%;
+    font-family: Arial, sans-serif;
+    font-size: medium;
     /* transicion */
     transition: all 500ms;
-    border-radius: 8%;
 }
 /*efecto hover en las cartas */
-
-
-.cards__card:last-child{
-    margin-right: 0px;
+.cards__card:hover{
+    background-color: rgb(230, 230, 230);
+    transform: scale(1.03);
 }
 
-.cards__card .card__icon{
-    display: block;
-    width: 100%;
-    height: 110px;
-    font-size: 50px;
-    line-height: 90px;
-    text-align: center;
-    margin: 0px auto;
+
+.card__ofertas{
+    height: 394px;
+    width: 394px;
+    margin: 0;
 }
-/*efecto hover en la carta modificamos card__icon */
 
-/* keyframes */
-
-.card__category{
+.card__categoria{
     width: 100%;
     height: 50px;
-    font-family: "TrebuchetMS";
+    font-family: sans-serif;
     font-size: 21px;
     font-weight: bold;
     text-align: center;
-    color: var(--color-text-title);
+    color: black;
     transition: all 500ms;
 }
 /*efecto hover en la carta - modificamos card_category */
+.cards__card:hover .card__categoria{
+    animation: muestraCategoria 700ms linear;
+}
+@keyframes muestraCategoria {
+    from{
+        transform: translateY(-150%);
+    }
+}
 
-.card__description{
-    font-family: "TrebuchetMS";
+.card__precio{
     text-align: center;
-    color: var(--color-text-title);
-    font-size: 14px;
-    /* transición */
+    color: red;
+    font-size: 24px;
 }
+
 /* efecto de hover en la carta. tocamos card__description */
-
-
-.clearfix{
-    float: none;
-    clear: both;
+.cards__card:hover .card__precio{
+    color: red;
+    animation: muestraPrecio 700ms linear;
 }
+.cards__card:hover .del{
+    animation: muestraPrecio 700ms linear;
+}
+@keyframes muestraPrecio {
+    from{
+        transform: translateX(-150%);
+    }
+}
+
+/*?-----------------------------------------FIN CARDS----------------------------------------------------------------------------------------------------------------*/
+
+/**-----------------------------------INICIO RESEÑAS-----------------------------------------------------------------------------------------------------------*/
+/* Artículos */
+.reseñas__title{
+    grid-template-rows: 1fr;
+    font-family: "BebasNeue";
+    margin-top: 30px;
+    font-size: 30px; 
+    text-align: center;
+    align-items: center;
+}
+.content__final{
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.reseñas {
+    display: grid;
+    gap: 20px;
+    grid-template-rows: repeat(4, auto); /* Divide en 4 filas para cada reseña */
+    padding: 20px;
+}
+
+.reseña_articulo {
+    display: grid;
+    grid-template-areas:
+        "texto usuario"
+        "texto valoracion"
+        "texto comentario"
+        "texto fecha";
+    grid-template-columns: 270px 1fr; /* Columna de 270px para la imagen */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-left: 15px;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.reseña_articulo:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+
+.imgArticulo {
+    grid-area: texto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgArticulo img {
+    width: 270px;
+    height: 270px;
+}
+
+.usuario {
+    grid-area: usuario;
+    font-weight: bold;
+    color: #2c3e50;
+    align-self: center; /* Centra verticalmente al lado de la imagen */
+    margin-left: 25px;
+    margin-bottom: -30px;
+}
+
+.valoracion {
+    grid-area: valoracion;
+    color: #f39c12;
+    font-size: 19px;
+    align-self: center; /* Centra verticalmente al lado de la imagen */
+    margin-left: 25px;
+
+}
+
+.comentario {
+    grid-area: comentario;
+    font-size: 16px;
+    color: #555;
+    margin-left: 25px;
+}
+
+.fecha {
+    grid-area: fecha;
+    font-size: 14px;
+    color: #777;
+    font-size: 10px;
+    margin-left: 25px;
+    text-align: end; /* Alinea al final de la sección */
+    color: var(--color-principal);
+}
+
+/*?-----------------------------------------FIN RESEÑAS----------------------------------------------------------------------------------------------------------------*/
+
+
+/**-----------------------------------INICIO ASIDE------------------------------------------------------------------------------------------------------------------*/
 
 /* Barra lateral */
-.content__lateral{
+.content__lateral {
     width: 300px;
     min-height: 1070px;
-    font-family: "TrebuchetMS";
-    float: right;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 20px;
 }
-.lateral__title{
+
+.lateral__title {
     display: block;
     width: auto;
     height: 45px;
     line-height: 49px;
-    background: url("../img/pxvar(--color-gray).png"), var(--color-text-white);
-    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
+    background: var(--color-principal);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
     font-size: 30px;
     font-family: "BebasNeue";
     font-weight: normal;
     letter-spacing: 2px;
     padding-left: 15px;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-bottom: 15px;
 }
 
-.lateral__title:first-child{
-    margin-top: 0px;
-}
-.lateral__search{
-    width: 90%;
-    height: 30px;
-    margin: 10px auto;
-    background-color: var(--color-text-white);
-    border: 1px solid var(--color-backgroung);
-    border-radius: 5px;
-    box-shadow: 1px 1px 4px var(--color-backgroung) inset;
-}
-
-.lateral__search input[type="text"]{
-    width: 85%; /* para que quepa el botón */
-    height: 30px;
-    border: none;
-    padding-left: 5px;
-    border-radius: 5px;
-    background-color: transparent;
-    color: var(--color-backgroung);
-    /* transición para el focus */
-}
-/* obtengo foco en input[type="text"] */
-
-
-.lateral__search input[type="button"],
-.lateral__search input[type="text"]{
-    height: 30px;
-    cursor:pointer;
-    font-size: 16px;
-    background-color: transparent; /* para que no tenga fondo */
-    border:none; /* para que se integre con el campo en sí */
-    border-left: 1px solid var(--color-backgroung);
-    color: var(--color-focus);
-    padding-left: 6px;
-}
-.aside-box{
-    width: 85%;
+.aside-box {
+    width: 85%; /* en la estrategia de Grid / Flex revisar este punto */
     height: 240px;
     margin: 0px auto;
     margin-top: 20px;
     padding-top: 2px;
     background-color: var(--color-text-white);
-    box-shadow: 0px 0px 1px rgba(0,0,0,0.3), 0px 3px 7px rgba(0,0,0,0.3), 0px 1px var(--color-text-white) inset, 0px -3px 2px rgba(0,0,0,0.3) inset;
-}
-
-.lateral__login input[type="email"],
-.lateral__login input[type="password"]{
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.3),
+      0px 1px var(--color-text-white) inset, 0px -3px 2px rgba(0, 0, 0, 0.3) inset;
+  }
+  
+  
+  .lateral__login input[type="email"],
+  .lateral__login input[type="password"] {
     display: block;
     margin: 0px auto;
     margin-top: 20px;
     width: 82%;
     height: 30px;
-    border: 1px solid var(--color-backgroung);
-    box-shadow: 1px 1px 1px var(--color-backgroung) inset;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 5px;
     padding-left: 30px;
     color: var(--color-gray);
-}
-.lateral__login input[type="email"]:focus,
-.lateral__login input[type="password"]:focus{
+  }
+  .lateral__login input[type="email"]:focus,
+  .lateral__login input[type="password"]:focus {
     color: var(--color-focus);
     box-shadow: 1px 1px 1px var(--color-gray) inset;
-}
-
-.lateral__login .lateral-box__user,
-.lateral__login .lateral-box__password{
+  }
+  
+  
+  .lateral__login .lateral-box__user,
+  .lateral__login .lateral-box__password {
     display: block;
     text-align: center;
     position: absolute;
     margin-left: 30px;
     margin-top: 6px;
     height: 30px;
-}
-.lateral__login .lateral-box__password{
+  }
+  .lateral__login .lateral-box__password {
     margin-left: 30px;
     margin-top: 22px;
     font-size: 20px;
-}
-
-.lateral__login input[type="submit"],
-.lateral__login input[type="button"],
-.lateral__login input[type="reset"],
-.lateral__login button{
+  }
+  
+  .lateral__login input[type="submit"],
+  .lateral__login input[type="button"],
+  .lateral__login input[type="reset"],
+  .lateral__login button {
     /* display: block; */
-    float: left;
+    float: left; /* en la estrategia de Grid / Flex revisar este punto */
     text-align: center;
-    width: 100px;
+    width: 100px; /* en la estrategia de Grid / Flex revisar este punto */
     height: 35px;
     margin-top: 20px;
     color: var(--color-text-white);
@@ -389,31 +494,46 @@ body{
     font-family: "TrebuchetMS";
     margin-left: 17px;
     margin-bottom: 20px;
-    /* transición */ 
-}
-.lateral__login input[type="submit"]:hover,
-.lateral__login input[type="button"]:hover,
-.lateral__login input[type="reset"]:hover,
-.lateral__login button:hover{
+    /* transición */
+    transition: all 300ms;
+  }
+  .lateral__login input[type="submit"]:hover,
+  .lateral__login input[type="button"]:hover,
+  .lateral__login input[type="reset"]:hover,
+  .lateral__login button:hover {
     /* le incluyo una sombra */
-}
-
-.lateral__login a{
+    box-shadow: 2px 2px 5px var(--color-primary);
+  }
+  
+  .lateral__login a {
     display: block;
     text-decoration: none;
     margin-left: 18px;
     font-size: 14px;
     color: var(--color-focus);
+  }
+  .lateral__login a:hover {
+    text-decoration: underline;
+    color: #2f78bc;
+  }
+  
+.login__submenu{
+    display: block;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+    color: var(--color-bg);
 }
 
-/* efecto en el .lateral__login a mediante hover */
+/*?----------------------------INICIAR SESION TERMINADO------------------------------*/
 
-
-.lateral__social{
-    height: 220px;
-}
-
-.lateral__social a{
+/**---------------------------REDES SOCIALES-----------------------------------------*/
+.lateral__social {
+    height: 250px;
+    align-items: center;
+  }
+  
+  .lateral__social img {
     display: block;
     color: var(--color-bg);
     text-decoration: none;
@@ -421,18 +541,26 @@ body{
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 20px;
-}
+  }
 
-.lateral__social .social__overlay{
+  .social__box img{
+    width: 40px;
+    height: 40px;
+  }
+
+  
+  .lateral__social .social__overlay {
     display: block;
     height: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    text-align: center;
+    align-content: center;
     letter-spacing: 1px;
-    text-shadow: 0px 0px 1px var(--color-backgroung);
+    text-shadow: 0px 0px 1px var(--color-background);
     border: 3px solid var(--color-text-white);
-    box-shadow: 0px 0px 4px var(--color-backgroung);
-    background: #F4F7FE;
+    box-shadow: 0px 0px 4px var(--color-background);
+    background: #f4f7fe;
     position: absolute;
     padding: 5px;
     margin-left: 70px;
@@ -441,111 +569,67 @@ body{
     transform: translateX(-80%); /*lo desplazo para que cuando se lance el hover se vea el movimiento de la traslación*/
     opacity: 0; /*lo oculto*/
     /* transición el cambio */
-
-}
-/* efecto hover sobre el div de lateral__social */
-
-
-/* Artículos */
-.content__articles{
-    float: left; /* es necesario flotarlo puesto que he incluido el div clearfix*/
-    width: 860px;
-}
-
-.content__articles h2{
-    display: block;
-    width: 100%;
-    height: 75px;
-    line-height: 75px; /* centra el texto */
-    text-align: center;
-    font-family: "BebasNeue";
-    font-size: 40px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    background: url("../img/pxvar(--color-gray).png"), var(--color-text-white);
-    box-shadow: 0px 1px 0px var(--color-box-shadow2), 1px 2px 0px var(--color-box-shadow2), 2px 3px 0px var(--color-box-shadow2), 3px 4px 0px var(--color-box-shadow2);
-    margin: 0px auto;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    transition: all 1s;
+  }
+  /* efecto hover sobre el div de lateral__social */
+  .social__box:hover .social__overlay{
+  /* .lateral__social div:hover .social__overlay{ */
+    transform: translateX(10%); /*lo desplazo para que cuando se lance el hover se vea el movimiento de la traslación*/
+    opacity: 1;
+  }
+  .lateral__social .social__overlay:hover{
+    opacity: 1;
+    transform: translateX(0);
+  }
+/*?---------------------------FIN REDES SOCIALES-----------------------------------------*/
+/**---------------------------EQUIPO DE TRABAJO-----------------------------------------*/
+.equipo__trabajo{
+    height: 570px;
+    width: 320px;
+    display: grid;
+    grid-row: 1fr 1fr 1fr 1fr 1fr;
+    grid-column: 1fr 1fr;
 }
 
-.articles__article{
-    width: 98%;
-    height: auto;
-    border: 1px solid var(--color-backgroung);
-    margin: 40px auto;
-    padding: 10px;
-    font-family: "TrebuchetMS";
-    background: var(--color-text-white);
-    color: var(--color-bg);
-    box-shadow: 1px 1px 2px var(--color-box-shadow);
+.trabajo__persona {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* Imagen a la izquierda y nombre/labor a la derecha */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+    align-items: center; /* Centra los elementos verticalmente */
+    margin-left: 15px;
 }
 
-.articles__article h4{
-    display: block;
-    font-size: 23px;
-    margin: 3px;
-}
-.articles__article h4 a{
-    text-decoration: none;
-    color: var(--color-text-title);
-}
-.articles__article h4 a:hover{
-    text-decoration: underline;
+.trabajo__persona img {
+    width: 80px;
+    height: 80px; 
+    border-radius: 3%;
 }
 
-.article__datos{
-    float: right;
-    background-color: var(--color-box-shadow2);
-    color: var(--color-text-white);
-    height: 30px;
-    line-height: 30px;
-    margin: -10px;
-    padding: 4px;
+.persona__nombre {
     font-size: 13px;
-    border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
-}
-.article__datos span{
-    margin: 6px;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.article__datos p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 15px;
+.persona__nombre span {
+    font-weight: bold;
+    line-height: 1.4;
 }
 
-.articles__blog{
-    height: 100px;
-    margin-top: 60px;
-    line-height: 100px;
-    text-align: center;
-    font-family: "BebasNeue";
-    /* transición */
+/*?---------------------------EQUIPO DE TRABAJO TERMINADO--------------------------------------*/
 
-}
-.articles__blog a{
-    font-family: "BebasNeue";
-    font-size: 40px;
-    letter-spacing: 3px;
-    color: var(--color-text-title);
-    text-decoration: none;
-    /* transición */
-}
-/* efecto de hover sobre articles__blog */
-
-
+/**COMIENZO FOOTER*/
 /* FOOTER */
 .content__footer{
-    width: 100%;
-    height: 470px;
+    width: auto;
+    height: auto;
     background-color: black;
     color: var(--color-text-white);
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .footer__wrap > div{
-    float: left;
-    width: 25%;
     height: 370px;
     margin: 40px;
     text-align: center;
@@ -556,21 +640,23 @@ body{
 .content__footer a{
     text-decoration: none;
     color: var(--color-primary);
-    /* transición */
+    
+    align-items: center;
+    align-content: center;
 
 }
 .footer__title{
     display: block;
-    background: url("../img/pxvar(--color-gray).png"), var(--color-text-white);
     height: 50px;
     letter-spacing: 2px;
     text-align: center;
     font-family: "BebasNeue";
     font-size: 40px;
     line-height: 55px;
-    color: black;
+    color: white;
     border-radius: 5px;
     margin-bottom: 15px;
+    text-align: center;
 }
 .footer__list{
     text-align: left;
@@ -598,17 +684,29 @@ body{
     border: 5px solid var(--color-text-white);
     box-shadow: 0px 0px 5px var(--color-gray);
 }
-
+.footer__desarrollo{
+    text-align: center;
+}
+.footer__desarrollo img{
+    margin-top: -30px;
+    width: 200px;
+    height: 150px;
+}
 .content__footer img{
     margin-bottom: 15px;
 }
 .footer__browsers img{
     width: 45px;
+    margin-left: 70px;
+
+}
+.footer__autor{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
 }
 
-/* Animaciones y Transiciones
-- Propiedad Animation
-- Keyframes
-- Transitions 
+/*?-----------------------------------------------FOOTER TERMINADO----------------------------------*/
 
-Indico cada punto aplicado como efecto*/
+
+

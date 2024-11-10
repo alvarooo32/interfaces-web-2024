@@ -29,10 +29,10 @@
                 </div>
                 <!--Lista Menu-->
                 <div class="menu__list">
-                    <img src="./img/barraNav_usuario.png" alt="usuario">
-                    <img src="./img/barraNav_corazon.png" alt="me gusta">
-                    <img src="./img/barraNav_cestaCompra.png" alt="cesta">
-                    <img src="./img/barraNav_menu.png" alt="menu"> <!--aÑADIR LISTA DESPLEGABLE-->
+                    <img class="accion1" src="./img/barraNav_usuario.png" alt="usuario">
+                    <img class="accion2" src="./img/barraNav_corazon.png" alt="me gusta">
+                    <img class="accion3" src="./img/barraNav_cestaCompra.png" alt="cesta">
+                    <img class="accion4" src="./img/barraNav_menu.png" alt="menu"> <!--aÑADIR LISTA DESPLEGABLE-->
                 </div>
                 <!-- <ul class="menu__list">
                     <li><a href="#">INICIO</a></li>
@@ -46,12 +46,12 @@
         <section class="content__info">
             <div class="container__menu">
                 <ul class="menu__productos">
-                        <li>OFERTAS</li>
-                        <li>LO MÁS VENDIDO</li>
-                        <li>ECOLÓGICO</li>
-                        <li>SEGUNDA MANO</li>
-                        <li>PLANIFICADOR</li>
-                        <li>ATENCIÓN AL CLIENTE</li>
+                        <li class="opcion1">OFERTAS</li>
+                        <li class="opcion2">LO MÁS VENDIDO</li>
+                        <li class="opcion3">ECOLÓGICO</li>
+                        <li class="opcion4">SEGUNDA MANO</li>
+                        <li class="opcion5">PLANIFICADOR</li>
+                        <li class="opcion6">ATENCIÓN AL CLIENTE</li>
                 </ul>
             </div>
         </section>
@@ -63,175 +63,211 @@
                 <title>BANNER</title>
             </div>
             <!-- fin de Banner -->
+
             <!-- Inicio Tarjetas -->
              <div class="card_title">
                 <h1>Ofertas en <span style="color:  #6cb0c7;">colchones, sofás, muebles y escritorios...</span> en Málaga</h1> <!--https://muebele.es/-->
             </div>
             <div class="content__cards">
                 <div class="cards__card">
-                    <img src="../Casa/img/escritotio.jpg" alt="escritorio">
-                    <h2 class="card__category">Escritorio de oficina</h2>
-                    <p class="card__description">199.00 € 179,10 €</p>
+                    <img class="card__ofertas" src="./img/escritorio.avif">
+                    <h2 class="card__categoria">Escritorio, 120x60 cm</h2>
+                    <p class="card__precio" style="color: black;"> <b>54,94€</b></p>
+                    <del>
+                        <p class="card__precio del">68.99€</p>
+                    </del>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">_</p>
-                    <h2 class="card__category">Sistemas Operativos</h2>
-                    <p class="card__description">
-                        Aprende a administrar sistemas operativos linux y windows.
-                    </p>
+                    <img class="card__ofertas" src="./img/sofa.avif">
+                    <h2 class="card__categoria">Sofá cama 3 plazas</h2>
+                    <p class="card__precio" style="color: black;"><b>449€</b></p>
+                    <del>
+                        <p class="card__precio del">499€</p>
+                    </del>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">S</p>
-                    <h2 class="card__category">Hardware</h2>
-                    <p class="card__description">
-                        Conoce los entresijos del hardware.
-                    </p>
+                    <img class="card__ofertas" src="./img/armario.avif">
+                    <h2 class="card__categoria">Armario, 150x66x201 cm</h2>
+                    <p class="card__precio" style="color: black;"><b>323€</b></p>
+                    <del>
+                        <p class="card__precio del">353€</p>
+                    </del>
                 </div>
                 <div class="cards__card">
-                    <p class="card__icon">u</p>
-                    <h2 class="card__category">Redes e Internet</h2>
-                    <p class="card__description">
-                        Aprende a configurar y administrar redes informáticas y servidores.
-                    </p>
+                    <img class="card__ofertas" src="./img/cama.avif">
+                    <h2 class="card__categoria">Cama 180x200 cm</h2>
+                    <p class="card__precio" style="color: black;"><b>549€</b></p>
+                    <del>
+                        <p class="card__precio del">570€</p>
+                    </del>
                 </div>
             </div>
             <!-- fin de Tarjetas -->
         </section>
+
         <!-- Inicio de Barra Lateral -->
-        <div class="clearfix"></div>
-        <aside class="content__lateral">
-            <h3 class="lateral__title">BUSCAR</h3>
-            <div class="lateral__search">
-                <form>
-                    <input type="text">
-                    <input type="button" value="L" class="search__icon">
-                </form>
+        
+        <h1 class="reseñas__title">ALGUNAS DE NUESTRAS RESEÑAS</h1>
+        <div class="content__final">
+        
+            <section class="reseñas">       
+                <div class="reseña_articulo">
+                    <div class="imgArticulo">
+                        <img src="./img/mesaComedor.webp" alt="Mesa Comedor">
+                    </div>
+                    <p class="usuario"><b>Ana Pérez</b></p>
+                    <p class="valoracion">★★★★☆</p>
+                    <p class="comentario">"Compré una mesa de comedor y estoy muy satisfecha con la calidad. Llegó a tiempo y el ensamblaje fue muy fácil. El diseño es moderno y elegante, aunque un poco más grande de lo que esperaba. Sin embargo, ¡perfecta para mi espacio!"</p>
+                    <p class="fecha">Fecha de la reseña: 10 de octubre de 2024</p>
+                </div>
+
+                <div class="reseña_articulo">
+                    <div class="imgArticulo">
+                        <img src="./img/sofaReseñas.avif" alt="Sofa">
+                    </div>
+                    <p class="usuario"><b>Carlos Gómez</b></p>
+                    <p class="valoracion">★★★☆☆</p>
+                    <p class="comentario">"La compra fue en general buena, pero hubo un pequeño retraso en la entrega. El sofá que adquirí es cómodo, pero la tela se arruga un poco más de lo que esperaba. Aun así, es un buen producto por el precio."</p>
+                    <p class="fecha">Fecha de la reseña: 5 de octubre de 2024</p>
+                                      
+                </div>
+
+                <div class="reseña_articulo">
+                    <div class="imgArticulo">
+                        <img src="./img/librero.avif" alt="Librero">
+                    </div>                    
+                    <p class="usuario"><b>Luisa Martínez</b></p>
+                    <p class="valoracion">★★★★★</p>
+                    <p class="comentario">"Estoy encantada con la compra de mi librero. Es robusto y tiene un acabado de alta calidad. Encaja perfectamente en mi sala y la entrega fue puntual. Lo recomendaría a cualquier persona que busque muebles duraderos y con estilo."</p>
+                    <p class="fecha">Fecha de la reseña: 1 de octubre de 2024</p>
+                </div>
+
+                <div class="reseña_articulo">
+                    <div class="imgArticulo">
+                        <img src="./img/silla.avif" alt="Silla">
+                    </div>                    
+                    <p class="usuario"><b>José Ramírez</b></p>
+                    <p class="valoracion">★★☆☆☆</p>
+                    <p class="comentario">"Lamentablemente, la silla que compré no era lo que esperaba. El material es más barato de lo que se muestra en las fotos, y no es tan cómoda como pensaba. El servicio al cliente fue útil, pero no volveré a comprar este tipo de muebles aquí."</p>
+                    <p class="fecha">Fecha de la reseña: 25 de septiembre de 2024</p>
+                </div>
+            </section>
+
+            <!--INICIO ASIDE--------------------------------------->
+            <section class="lateral_aside">
+                <aside class="content__lateral">
+                    <!-----Inico de sesion--------------------------->
+                    <h3 class="lateral__title">LOGIN</h3>
+                    <div class="lateral__login aside-box">
+                        <form>
+                            <label class="lateral-box__user aside-box__icon">U</label>
+                            <input type="email" placeholder="Introduce email...">
+                            <label class="lateral-box__password aside-box__icon">w</label>
+                            <input type="password" placeholder="Introduce la contraseña...">
+                            <input type="submit" value="Entrar">
+                            <input type="reset" value="Limpiar">
+                            <a href="#">Regístrate aquí</a>
+                            <a href="#">Has olvidado tu contraseña?</a>
+                        </form>
+                    </div>
+                    <!--------------redes sociales------------------->
+                    <h3 class="lateral__title">REDES SOCIALES</h3>
+                    <div class="lateral__social aside-box">
+                        <div class="social__box social__Instagram">
+                            <img src="./img/instagram.webp" alt="">
+                            <p class="social__overlay">
+                                Instagram
+                            </p>
+                        </div>
+                        <div class="social__box social__Twitter">
+                            <img src="./img/twitter.png" alt="">
+                            <p class="social__overlay">
+                                Twitter
+                            </p>
+                        </div>
+                        <div class="social__box social__Tiktok">
+                            <img src="./img/tiktok.webp" alt="">
+                            <p class="social__overlay">
+                                Tiktok
+                            </p>
+                        </div>
+                        <div class="social__box social__Tiktok">
+                            <img src="./img/LinkedIn.svg.png" alt="">
+                            <p class="social__overlay">
+                                Linkedin
+                            </p>
+                        </div>
+                    </div>
+                    <!-------------EQUIPO DE TRABAJO-------------------------->
+                    <h3 class="lateral__title">EQUIPO DE TRABAJO</h3>
+                    <div class="equipo__trabajo aside-box">
+                        <div class="trabajo__persona">
+                            <img src="./img/alvaro.png">
+                            <div class="persona__nombre">
+                                <span><b>Project Manager</b><br>Álvaro Saborido de la Ossa</span>
+                            </div> 
+                        </div>
+                        <div class="trabajo__persona">
+                            <img src="img/sergio.png">
+                            <div class="persona__nombre">
+                                <span><b>Analista de software</b><br>Manuel Vidal Andrades</span>
+                            </div> 
+                        </div>
+                        <div class="trabajo__persona">
+                            <img src="img/ale.png">
+                            <div class="persona__nombre">
+                                <span><b>Arquitecto de software</b><br>Alejandro Vila Cara</span>
+                            </div> 
+                        </div>
+                        <div class="trabajo__persona">
+                            <img src="img/manu.png">
+                            <div class="persona__nombre">
+                                <span><b>Desarrollador de software</b><br>Sergio Álvarez Mancera</span>
+                            </div>
+                        </div>
+                        <div class="trabajo__persona">
+                            <img src="img/samu.png">
+                            <div class="persona__nombre">
+                                <span><b>Tester</b><br>Samuel Trujillo Gómez</span>
+                            </div>
+                        </div>
+                    </div>   
+                </aside>
+            <!-- fin de Aside -->
             </div>
-            <h3 class="lateral__title">LOGIN</h3>
-            <div class="lateral__login aside-box">
-                <form>
-                    <label class="lateral-box__user aside-box__icon">U</label>
-                    <input type="email">
-                    <label class="lateral-box__password aside-box__icon">w</label>
-                    <input type="password">
-                    <input type="submit" value="Entrar">
-                    <input type="reset" value="Limpiar">
-                    <a href="#">Regístrate aquí</a>
-                    <a href="#">Has olvidado tu contraseña?</a>
-                </form>
-            </div>
-            <h3 class="lateral__title">REDES SOCIALES</h3>
-            <div class="lateral__social aside-box">
-                <div class="social__twitter">
-                    <a href="#" class="social__icon">t</a>
-                    <p class="social__overlay">
-                        Twitter
-                    </p>
-                </div>
-                <div class="social__facebook">
-                    <a href="#" class="social__icon">f</a>
-                    <p class="social__overlay">
-                        Facebook
-                    </p>
-                </div>
-                <div class="social__youtube">
-                    <a href="#" class="social__icon">y</a>
-                    <p class="social__overlay">
-                        Youtube
-                    </p>
-                </div>
-            </div>
-            <h3 class="lateral__title">PATROCINADORES</h3>
-            <div class="lateral__sponsors aside-box">
-            </div>
-        </aside>
-        <!-- fin de Aside -->
-        <!-- Inicio de los Artículos -->
-        <section class="content__articles">
-            <h2 class="articles__title">Últimos artículos</h2>
-            <div class="clearfix"></div>
-            <article class="articles__article">
-                <div class="article__datos">
-                    <span>Fecha: 01 de enero</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 1</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-            </article>
-            <article class="articles__article">
-                <div class="article__datos">
-                    <span>Fecha: 01 de febrero</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 2</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-            </article>
-            <article class="articles__article">
-                <div class="article__datos">
-                    <span>Fecha: 01 de marzo</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 3</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-            </article>
-            <article class="articles__article">
-                <div class="article__datos">
-                    <span>Fecha: 01 de abril</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 4</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-            </article>
-            <article class="articles__article">
-                <div class="article__datos">
-                    <span>Fecha: 01 de agosto</span>
-                    <span>Categoría: Pruebas</span>
-                </div>
-                <h4 class="article__subtitle">
-                    <a href="#">Título de artículo 5</a>
-                </h4>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
-            </article>
-            <article class="articles__blog">
-                <a href="#">Ir al Blog</a>
-            </article>
-        </section>
-        <!-- fin de los Artículos -->
+            </section>
+            
+
+        
     </main>
+    
     <div class="clearfix"></div>
     <!-- Inicio de Pié de Página -->
     <footer class="content__footer">
-        <div class="footer__wrap">
-            <div class="footer__menuFooter">
-                <h5 class="footer__title">MENÚ</h5>
-                <ul class="footer__list">
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">BLOG</a></li>
-                    <li><a href="#">FORMACIÓN</a></li>
-                    <li><a href="#">CONTACTO</a></li>
-                </ul>
-            </div>
-            <div class="footer__location">
-                <h5 class="footer__title">DÓNDE ESTAMOS?</h5>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.2996623515555!2d-4.462811723546774!3d36.69133637227841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f9c45623d2c3%3A0x7a634bd28c0cf953!2sMEDAC%20Nova%20%F0%9F%A5%87%20Centro%20Tecnol%C3%B3gico%20de%20FP!5e0!3m2!1ses!2ses!4v1698701252334!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+        <section class="footer_menu">
+            <div class="footer__wrap">
+                <div class="footer__menuFooter">
+                    <h5 class="footer__title">MENÚ</h5>
+                    <ul class="footer__list">
+                        <li><a href="#">INICIO</a></li>
+                        <li><a href="#">OFERTAS</a></li>
+                        <li><a href="#">PLANIFICADOR</a></li>
+                        <li><a href="#">ATENCIÓN AL CLIENTE</a></li>
+                    </ul>
+                </div>
+        </section>
+        <section class="footer_mapa">
+        </div>
+        <div class="footer__location">
+            <h5 class="footer__title">DÓNDE ESTAMOS?</h5>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.2996623515555!2d-4.462811723546774!3d36.69133637227841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f9c45623d2c3%3A0x7a634bd28c0cf953!2sMEDAC%20Nova%20%F0%9F%A5%87%20Centro%20Tecnol%C3%B3gico%20de%20FP!5e0!3m2!1ses!2ses!4v1698701252334!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </section>
+        <section class="footer__iformacion">
             <div class="footer__info">
                 <h5 class="footer__title">Desarrollado con</h5>
-                <p>
-                    <img src="img/html5-badge-h-css3-graphics-multimedia-performance-semantics.png" alt="Creado con HTML y CSS">
+                <p class="footer__desarrollo">
+                    <img src="./img/html y css.png" alt="Creado con HTML y CSS">
                 </p>
                 <h5 class="footer__title">Optimizado para</h5>
                 <p class="footer__browsers">
@@ -252,9 +288,11 @@
                     </a>
                 </p>
                 <h5 class="footer__title">AUTOR</h5>
-                <p>&copy; Alumn@ - WEB</p>
+                <p class="footer__autor">&copy; Álvaro Saborido de la Ossa - 2B-DAW</p>
             </div>
         </div>
+        </section>
+            
     </footer>
     <!-- fin de Pié de Página -->
 </body>

@@ -55,32 +55,22 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .menu__navbar{
     /* Grid + aling/justify */
     display: grid;
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     grid-template-columns: 1fr 0fr 0fr;
     /* grid-template-columns: 70% 20%; */
     align-items: center;
     width: 100%;
-=======
-    grid-template-columns: 1fr 0fr 1fr;
-
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 
 .navbar__logo{
-    margin-left: 40px;
     width:187px; /* no utilizo rem para que se mantenga el tamaño */
 }
 .nav__list{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     /* Grid + aling/justify */
-=======
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
 .nav__item{
     /* position */
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     position: relative; /* con esto no alteramos la posición natural de los elementos
     y si incluimos algo dentro (pseudoelemento after, before,...) se queda dentro de los
     límites de mi caja,...*/
@@ -94,19 +84,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     grid-template-columns: 1fr 1fr;
     align-items: center;
     
-=======
-    /* El padre tendra la posición relativa y al hijo le ponemos la absoluta */
-    position: relative;
-    margin: 0 2.4rem;
-}
-.nav__title{
-    /* Ubicamos título e icono */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-
-    position: relative;
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     line-height: 6rem;
     font-weight: 500;
     color: var(--color-text-body);
@@ -130,17 +107,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     transform: scale(1.1);
 }
 
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 /* pseudoelemento para el menú */
 .nav__title::before{
     content: "";
-=======
-/* Pseudoelemento para subrayado en el menu */
-/* ::before hace que lo que pongamos se ponga "antes" del elemento en sí */
-.nav__title::before {
-    content:"";
-    position: absolute;
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     height: 0.2rem;
     width: 0;
     background-color: var(--color-primary);
@@ -148,12 +117,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     bottom: 1.2rem;
     left: 0;
     opacity: 0;
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     transition: all 300ms linear;
-=======
-    transition: all 350ms linear;
-
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 .nav__title:hover::before{
     width: 100%;
@@ -185,17 +149,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     transform: translateX(3rem);
     transition: all 500ms ease-in-out
 }
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 /* efecto. Consigo que los elementos se ubiquen con delay */
 .submenu__item:nth-child(1){
     transition-delay: 100ms;
-=======
-
-/* efecto */
-/* nth-child() Elijo al hijo que quiero tocar */
-.submenu__item:nth-child(1) {
-   transition-delay: 100ms; 
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 .submenu__item:nth-child(2){
     transition-delay: 200ms;
@@ -211,14 +167,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 
 .submenu__title{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     /* position */
     position: relative;
 
-=======
-    /* position */ 
-    position: relative;
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     font-size: 1.4rem;
     text-transform: capitalize;
     text-decoration: none;
@@ -230,7 +181,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     transition: all 300ms ease-in-out;
 }
 
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 /* efectos varios */
 .nav__item:hover>.nav__submenu{
     opacity: 1;
@@ -243,34 +193,13 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     opacity: 1;
     transform: translateX(0);
     /* visibility: visible; */
-=======
-/* Efectos varios */
-/* Efecto en la caja escondida en sí */
-.nav__item:hover>.nav__submenu {
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-    /* Para vaya un poco de der a izq */
-    left: 0;
-}
-/* Efecto en los elementos de la caja */
-.nav__item:hover>.nav__submenu>.submenu__item {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 .submenu__title:hover{
     color: var(--color-primary);
     /* transform: scale(1.1);     */
 }
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 
 .submenu__item::after{
-=======
-.submenu__item::before {
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     content: "";
     height: 0.2rem;
     width: 0;
@@ -368,15 +297,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     animation-name: muestraDerecha;
     animation-duration: 2s;
 }
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 @keyframes muestraDerecha{
     0%{
         transform: translateX(100%);
-=======
-@keyframes muestraDesdeDerecha {
-    from {
-        transform: translateX(70%);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     }
     100%{
         transform: translateX(0px);
@@ -390,15 +313,9 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     animation-name: muestraIzquierda;
     animation-duration: 2s;
 }
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 @keyframes muestraIzquierda{
     0%{
         transform: translateX(-50%);
-=======
-@keyframes muestraDesdeIzquierda {
-    from {
-        transform: translateX(-70%);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     }
     100%{
         transform: translateX(0px);
@@ -411,7 +328,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     left: 50%;
     animation: mueveShape3 20s infinite;
 }
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 @keyframes mueveShape3{
     0%{
         transform: translateX(0) translateY(0);
@@ -424,20 +340,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     }
     100%{
         transform: translateX(0) translateY(0);
-=======
-@keyframes mueveShape3 {
-    0% {
-        transform: translateX(0%) translateY(0%);
-    }
-    33% {
-        transform: translateX(50px) translateY(-200px);
-    }
-    66% {
-        transform: translateX(800px) translateY(0%);
-    }
-    100% {
-        transform: translateX(0%) translateY(0%);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     }
 }
 
@@ -466,13 +368,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 
 .shapes__item--shape5{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     bottom:12rem;
     left:53%;
-=======
-    bottom: 12rem;
-    left: 53%;
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     opacity: 0.7;
     animation: mueveShape5 40s infinite;
 }
@@ -510,7 +407,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     -webkit-animation: mueveShape4 30s infinite;
 }
 .shapes__item--shape7{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     /* position y animación */
     top:0;
     right: 10rem;
@@ -521,17 +417,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 @keyframes muestraArriba{
     0%{
         transform: translateY(-50%);
-=======
-    top: 0%;
-    right: 5.5%;
-    z-index: 4;
-    animation-name: muestraDesdeArriba;
-    animation-duration: 2s;
-}
-@keyframes muestraDesdeArriba {
-    from{
-        transform: translateY(-70%);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     }
     100%{
         transform: translateY(0%);
@@ -599,39 +484,17 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     border: 1px solid;
     border-image-source: linear-gradient(90deg, var(--color-bg-services), rgba(255,255,255,0));
     /* efecto */
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     transition: all 300ms linear;
 }
 .services__service:hover{
     background-color: var(--color-bg-services);
-=======
-    transition: all 200ms linear
-}
-.services__service:hover {
-    background-color: var(--color-borders);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 
 .service__container-img{
     margin-right: 2.5rem;
     max-width: 8.5rem;
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     /* Relacionado con flex grow y flex basis. En grid no es necesario cambiar el tamaño aquí */
 }
-=======
-    /* Relacionado con flex grow y flex basis */
-    /* transition: all 500ms ease-in-out */
-}
-.service__container-img {
-    margin-right: 2.5rem;
-    max-width: 8.5rem;
-    /* Relacionado con flex grow y flex basis */
-}
-.service__img:hover {
-    transform: scale(1.4);
-}
-
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 .service__content{
     /* Relacionado con flex grow y flex basis. En grid no es necesario cambiar el tamaño aquí  */
     
@@ -661,31 +524,16 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     transition: all 300ms linear;
 }
 
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 /* pseudoelemento before service__more */
 .service__more::before{
-=======
-/* pseudoelemento before */
-.service__more::before {
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     content: "";
     width: 3.4rem;
     height: 1.5px;
     background-color: var(--color-text-body);
     position: absolute;
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     left:0;
     /* top:10%; */
     bottom: 50%;
-=======
-    left: 0;
-    bottom: 50%;
-    /* Efecto */
-    transition: all 500ms linear;
-}
-.service__more:hover::before{
-    background-color: var(--color-primary);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 
 .service__more:hover,
@@ -693,11 +541,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-primary);
 }
 .service__more:hover::before{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     background-color: var(--color-primary);
-=======
-    color: var(--color-primary);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 
 /* para generar el escalonado de las tarjetas de servicios */
@@ -705,11 +549,7 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin-top: 20rem;
 }
 .services__service--middle{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     margin-top: 10rem;
-=======
-    margin-top: 100px;
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 .services__service--top{
     margin-top: 0rem;
@@ -724,11 +564,8 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 }
 .service-shapes--shape1{
     /* position */
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     top:-10%;
     right: 26%;
-=======
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 .service-shapes--shape2{
     /* position */
@@ -786,14 +623,10 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     text-transform: capitalize;
 }
 .projects__categories{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     /* Grid */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 3fr;
     z-index: 1;
-=======
-    /* Flex */
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 
     gap: 7rem;
     margin-bottom: 5.5rem;
@@ -808,7 +641,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     padding: 0.8rem 0;
     /* efecto */ 
     transition: all 300ms linear;
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 
 .projects__all{
@@ -821,22 +653,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .projects__project{
     width: calc(100% - 3.5rem); 
     /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
-=======
-}
-.categories__item:hover{
-    /* Efecto */
-    color: var(--color-primary);
-    transform: scale(1.1);
-}
-
-.projects__all{
-    /* flex */
-
-    gap: 4rem 7rem;
-}
-.projects__project{
-    width: calc(50% - 3.5rem); /* consigo que mis tarjetas tengan un tamaño variable. Facilita el responsive */
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 
 /* Subrayado mediante pseudoelemento before */
@@ -883,15 +699,11 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
 .project__img{
     width:100%;
     /* efecto */
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     transition: all 2s ease-in-out;
 }
 .project__container-img:hover .project__img{
 /* .projects__project:hover .project__img{ */
     transform: scale(1.2);
-=======
-
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 
 .project__content{
@@ -907,12 +719,6 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     margin-bottom: 1rem;
     /* efecto */
     transition: all 300ms linear;
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
-=======
-}
-.project__title:hover{
-    color: var(--color-banner);
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
 }
 .project__title:hover{
     color: var(--color-banner);
@@ -988,15 +794,10 @@ No es necesario flotar los elementos (ni con float, flex, grid, grid-areas */
     color: var(--color-text-description);
 }
 .stats__progress{
-<<<<<<< HEAD:08-MaquetacionAgenciaWeb/MaquetacionAgenciaWeb/assets/css/estilos.css
     /* Grid */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     /* align-items: center; */ 
-=======
-    /* Flex */
-    
->>>>>>> 24633cdb02e62895fe7b444365017c0c249a72d6:08-MaquetacionAgenciaWeb/assets/css/estilos.css
     gap: 3rem;
 }
 .stats__stat{

@@ -1,39 +1,248 @@
-/* del 0 al 1245px aplico esto */
-@media (max-width: 1230px){ 
+/* Visionado para tablet*/
 
+@media (max-width: 969px) {
+    
+    /* Ajustes del Header */
+    .header__menu {
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+
+    .header__logo img {
+        height: 50px;
+    }
+
+    .menu__list {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .menu__productos {
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: medium;
+    }
+
+    /* Ajustes para el Banner */
+    .content__banner {
+        height: 300px;
+        background-size: cover;
+    }
+
+    /* Ajustes para las Tarjetas */
+    .content__cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cards__card {
+        width: 90%;
+        height: auto;
+        margin: 15px auto;
+    }
+
+    /* Ajustes para las Reseñas */
+    .content__final {
+        grid-template-columns: 1fr;
+    }
+
+    .reseña_articulo {
+        grid-template-columns: 100px 1fr;
+        margin-left: 10px;
+    }
+
+    .imgArticulo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .usuario,
+    .valoracion,
+    .comentario,
+    .fecha {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    /* Ajustes para el Aside */
+    .content__lateral {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .lateral__title {
+        font-size: 24px;
+    }
+
+    /* Ajustes para el Equipo de Trabajo */
+    .equipo__trabajo {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .trabajo__persona {
+        margin-left: 0;
+    }
+
+    .trabajo__persona img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .persona__nombre {
+        font-size: 12px;
+    }
+
+    /* Ajustes para el Footer */
+    .content__footer {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__title {
+        font-size: 30px;
+    }
+
+    .footer__list li {
+        font-size: 18px;
+    }
+
+    .content__footer iframe {
+        height: 250px;
+    }
 }
 
-@media (max-width: 1079px){
 
-}
-@media (max-width: 969px){
- 
-}
-@media (max-width: 920px){
 
-}
-
-@media (max-width: 890px){
-
-}
-
-@media (max-width: 799px){
- 
-}
-/* movemos ya el menú y cambiamos estructura */
-@media (max-width: 800px){
-
-}
 /* Visionado para Móviles */
-@media (max-width: 660px){
- 
-}
-@media (max-width: 550px){
 
+@media (max-width: 550px) {
+
+    /* Header */
+    .header__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .header__logo img {
+        height: 40px;
+    }
+
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .menu__productos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: small;
+    }
+
+    /* Banner */
+    .content__banner {
+        height: 200px;
+        background-size: cover;
+    }
+
+    /* Tarjetas */
+    .content__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards__card {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    /* Reseñas */
+    .content__final {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reseña_articulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .imgArticulo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .usuario,
+    .valoracion,
+    .comentario,
+    .fecha {
+        font-size: 12px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* Aside */
+    .content__lateral {
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .lateral__title {
+        font-size: 20px;
+    }
+
+    /* Equipo de Trabajo */
+    .equipo__trabajo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .trabajo__persona {
+        margin: 10px 0;
+    }
+
+    .trabajo__persona img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .persona__nombre {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    /* Footer */
+    .content__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__title {
+        font-size: 24px;
+    }
+
+    .footer__list li {
+        font-size: 16px;
+    }
+
+    .content__footer iframe {
+        width: 100%;
+        height: 200px;
+    }
 }
 
-@media (max-width: 470px){
- 
-}
+
+
 
 
