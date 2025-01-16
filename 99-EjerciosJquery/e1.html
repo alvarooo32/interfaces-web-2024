@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Ejercicio 1</h3>
+    <button class="item">Texto antiguo</button>
+    <hr>
+    <h3>Ejercicio 2</h3>
+    <input type="text" class="producto" value="Primero">
+    <input type="text" class="producto" value="Segundo">
+    <input type="text" class="producto" value="Tercero">
+    <hr>
+    <h3>Ejercicio 3</h3>
+    <div>Primer div</div>
+    <div>Segundo div</div>
+    <div>Tercer Div</div>
+    <hr>
+    <h3>Ejercicio 4</h3>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function(){
+            //1-Selecciona el elemento con la clase .item y cámbiale el texto.
+            $(".item").text("Nuevo texto");
+
+            //2-Selecciona el primer elemento con la clase .producto y cambia su color de fondo a azul
+            $(".producto:first").css("background-color", "blue");
+
+            //3-Accede al primer <div> de la página y agrega el texto "Hola Mundo" 
+            $("div.first").text("Hola Mundo")
+
+            //4-Selecciona el elemento con id #titulo y cambia su color a rojo.
+            $("#titulo").css("color", "rojo");
+
+            //5-Accede a todos los elementos <p> en la página y cambia su tamaño de fuente a 18px y Cambia el tamaño de fuente de todos los elementos <p> a 18px
+            $('p').css('font-size', '18px');
+
+            //6-Añade un nuevo elemento <li> al final de una lista con id #lista.
+            $("#lista").append("<li> Item Nuevo </li>");
+
+            //7-Accede al contenido del elemento con id #descripcion y muestra el valor en consola.
+            console.log($("#descripcion").text());
+
+            //8-Obtén todos los elementos con la clase .carta y cambia su color de borde a verde.
+            $(".carta").css("border","5px solid green");
+        
+            //9-Elimina todos los elementos con la clase .eliminar.
+            $("eliminar").remove();
+
+            //10-Selecciona todos los <span> dentro de un <div> con id #contenedor y cambia su color de fondo a gris
+            $("#contenedor span").css("background-color", "gray");
+        
+            //11-Selecciona todos los elementos con la clase .foto y ocúltalos.
+            $(".foto").hide();
+        })
+    </script>
+</body>
+</html>
