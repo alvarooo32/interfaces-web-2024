@@ -1,0 +1,18 @@
+¿Cuándo necesitas e y cuándo no?
+Necesitas e cuando:
+
+- La función maneja un evento (como onChange, onClick, onSubmit, etc.).
+
+- Necesitas acceder a información relacionada con el evento, como:
+
+        El valor de un input (e.target.value).
+
+        El elemento que disparó el evento (e.target).   
+
+        Datos específicos del evento (por ejemplo, la tecla presionada en onKeyDown).
+
+No necesitas e cuando:
+
+- La función no interactúa con ningún evento.
+
+- Es una función independiente que no depende de datos externos.
